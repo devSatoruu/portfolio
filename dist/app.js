@@ -1,169 +1,1628 @@
-const projects=[{"slug":"bowlstation","name":"BOWLSTATION","type":"FULL-STACK / RESTAURANT TECH","category":"web","image":"bowlstation.webp","caption":"Live application capture · Customer ordering menu","desc":"A restaurant menu where customers order from their table and follow their order status.","tags":["React","Express","SQLite","REST API"],"github":"https://github.com/devSatoruu/bowlstation","live":"https://bowlstation.onrender.com/?table=1","summary":"A QR restaurant ordering system with a mobile menu, independent guest orders, private tracking, and a protected kitchen dashboard.","star":[["Situation","I wanted to explore how a restaurant could handle table orders without relying on handwritten tickets. Customers also needed a way to see what was happening after they placed an order. I used a fictional restaurant so I could build and test the workflow as a portfolio project."],["Task","The goal was to connect the customer menu with a separate kitchen dashboard. One detail mattered a lot: people at the same table should be able to order separately, without seeing each other’s private order details."],["Action","I connected a React frontend to an Express API and a SQLite database. The customer side includes menu filters, a cart, guest and seat labels, and special instructions. On the kitchen side, orders move through Pending, Preparing, Ready, and Completed. Staff access uses a password-protected session, while customers track orders using credentials stored in their own browser."],["Result","The prototype supports the full ordering flow, from a table-specific link to a kitchen order. The menu has eight items, and guests can place separate orders at the same table. This is a demo rather than a real restaurant service, so there are no payments or customer-impact figures to report."]],"lesson":"This project helped me think beyond the page someone sees. A table number tells the kitchen where an order belongs, but it should not give a customer access to every order at that table. Keeping those two ideas separate was an important part of the design.","role":"Full-stack web development: the customer ordering flow, backend API, and kitchen dashboard.","future":"The next improvement I would focus on is testing the complete flow with several customers ordering at once. I would check that order ownership and status updates stay correct as the queue grows.","evidence":"The screenshot shows the menu customers use to order. You can try the menu and cart in the live demo, or look through the code for the kitchen dashboard and order tracking on GitHub."},{"slug":"tripcraft-ai","name":"TripCraft AI","type":"FULL-STACK / AI INTEGRATION","category":"web","image":"trip-explore.webp","caption":"Repository screenshot · Explore and trip preferences","desc":"A travel planner that creates a daily itinerary you can edit and save.","tags":["React","Node.js","Gemini API","localStorage"],"github":"https://github.com/devSatoruu/tripcraft-ai","live":"https://tripcraft-ai-o4ad.onrender.com/","summary":"An AI travel planner that turns a destination, duration, budget, and interests into an editable day-by-day itinerary.","star":[["Situation","I built TripCraft AI to practise connecting a web application to an AI service. The idea was to turn a destination, trip length, budget, and interests into a daily plan that the user could still change."],["Task","I needed to connect React to an Express backend, get a usable response from Gemini, and let users edit and save the result. I also needed to handle the cases where the AI request failed."],["Action","I created an endpoint for trip generation and kept the API key on the server. When I ran into model-access and JSON-schema errors, I adjusted the configuration, corrected the schema, and added response validation. I also added retries and a clearly labeled demo fallback. React manages the selected day and activity edits, while localStorage keeps saved trips in the same browser."],["Result","The deployed app can generate a day-by-day plan, let the user add or edit activities, and save trips locally. If a supported AI error occurs, the app can show a labeled sample itinerary. Working through the integration gave me more practice debugging requests between the frontend, backend, and an external service."]],"lesson":"One thing I learned was that a successful API call is only part of the feature. The user also needs to know when a request is loading, when something failed, and whether they are looking at AI output or demo data. I also got more comfortable updating nested React state without changing the original objects.","gallery":[["trip-itinerary.webp","Generated itinerary"],["trip-activity-editor.webp","Activity editor"],["trip-saved-trips.webp","Saved trips"]],"role":"Full-stack web development and Gemini API integration, including itinerary editing and saved trips.","future":"I would next work on cloud storage so saved trips could be opened on another device. I would also look at a reliable place-data API, since generated suggestions do not verify opening hours, prices, or bookings.","evidence":"These screenshots show the trip form, daily itinerary, activity editor, and saved trips. The code on GitHub includes the Gemini connection and error handling."},{"slug":"super-maria-sisters","name":"Super Maria Sisters","type":"ANDROID / MOBILE GAME","category":"mobile","image":"maria-gameplay.webp","caption":"Super Maria Sisters gameplay — character, obstacles, score, coins, and touch controls.","desc":"An Android game with jump and slide controls, scoring, and pause and restart states.","tags":["Kotlin","Android","Game state","Touch UI"],"github":"https://github.com/devSatoruu/super-maria-sisters","summary":"A mobile programming project with jump and slide controls, score and coin displays, and start, pause, and restart interactions.","star":[["Situation","Super Maria Sisters is a mobile programming project. The interface needed to keep up with the game: the controls shown during play should be different from those shown at the start or after game over."],["Task","The objective was to connect the Android controls to the game view and keep the score, coins, and button visibility in sync with the current state."],["Action","The Kotlin activity connects the jump, slide, pause, start, and restart buttons to GameView methods. Score and coin callbacks update the labels, and the game-over callback changes which controls are visible. The screenshots show the welcome screen and gameplay with the on-screen controls."],["Result","The game includes a welcome screen, a scrolling desert level, score and coin counters, and jump and slide controls. The screenshots show the character running and sliding past an obstacle. The repository includes the Android implementation and game assets; there is no browser demo for this project."]],"lesson":"The controls need to match what is happening in the game. For example, pausing or ending a run changes which buttons should be available. Keeping the game view and the Android controls in sync is a key part of this project.","gallery":[["maria-welcome.webp","Welcome screen with Start and Settings controls"],["maria-slide.webp","Sliding under an obstacle during gameplay"]],"role":"My main responsibilities in our group project were implementing the gameplay controls, including jumping and sliding, and working on character animations.","future":"The next step would be to test the controls and pause/restart flow on different Android screen sizes, then add a short gameplay recording to show the movement and transitions in action.","evidence":"The screenshots show the welcome screen, running, and sliding under an obstacle. You can also see the score, coins, and touch controls. The Android code is on GitHub."},{"slug":"tcd-ai-copilot","name":"TCD AI Co-Pilot","type":"TEAM PROJECT / AI PROTOTYPE","category":"web","status":"IN PROGRESS","image":"tcd-architecture.svg","caption":"Planned architecture diagram, redrawn from the October 2026 Prototype V1 requirements. Not a live-system screenshot.","desc":"An ongoing school team project for The Clean Divorce. I lead the project and contribute to architecture, development, and documentation.","tags":["Project leadership","System architecture","Lovable (planned)","OpenAI API (planned)"],"summary":"We are working on an AI assistant that uses approved information from The Clean Divorce to answer questions, suggest appropriate next steps, and recognize when a person should speak to a professional.","role":"Project leader. I oversee the overall work and help across system architecture, development, and documentation.","star":[["Situation","Our school team is working on an AI Co-Pilot for The Clean Divorce. The aim is to go beyond a basic FAQ chatbot while keeping the first prototype realistic for the course timeline. The requirements call for approved knowledge, clear next steps, and human support when a question needs it."],["Task","As project leader, I oversee the project and help with system architecture, development, and documentation. I keep track of how the different parts fit together and help the team stay on the same page."],["Action","I work across the technical and documentation sides instead of only coordinating tasks. The current requirements outline a Lovable interface, backend integration with the OpenAI API, approved organizational knowledge, and routing and risk checks. They also separate what belongs in Prototype V1 from later features. The team still needs client approval for some routing, privacy, and handoff rules before treating them as final system behavior."],["Result","The project is still in progress. We have updated the Prototype V1 requirements to cover the scope, planned architecture, deliverables, and testing. Next, we need to confirm the remaining client questions, prepare the knowledge and test questions, and connect the API. We don’t have final test results yet."]],"lesson":"Leading this project is making me pay attention to how decisions in one area affect the others. A change to the routing rules can affect the prompt, the interface, the test cases, and the documentation. I need to keep that bigger picture in mind while also helping with the actual work.","future":"Next, we need to resolve the open client questions, prepare the approved knowledge and benchmark questions, and connect the backend when the school-provided API token is available. Testing will look at accuracy, helpfulness, routing, safety, and whether the response gives a clear next step.","evidence":"I’ve included a diagram of the planned system and a summary of the current scope below. This is still a work in progress, so the diagram shows what we plan to build."}];
-const caseSlug=location.pathname.split('/').filter(Boolean)[1];const current=projects.find(p=>p.slug===caseSlug);const home=!current;const nav=[['00','overview','Overview'],['01','projects','Projects'],['02','about','About me'],['03','skills','Skills & evidence'],['04','resume','Resume'],['05','contact','Contact']];
-const external=(url,label,primary=false)=>`<a class="btn ${primary?'primary':''}" href="${url}" target="_blank" rel="noopener noreferrer">${label}<span>↗</span></a>`;
-const tags=p=>`<div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>`;
-const card=(p,i)=>`<article class="project" data-category="${p.category}"><div class="windowbar"><span><span class="dots"><i></i><i></i><i></i></span>~/projects/${p.slug}</span><span>${p.status?'◌ '+p.status:p.live?'● LIVE':'◈ ANDROID'}</span></div><div class="project-cover"><button data-image="${p.image}" data-caption="${p.caption}" aria-label="Expand ${p.name} ${p.slug==='tcd-ai-copilot'?'architecture diagram':'screenshot'}"><img src="/assets/${p.image}" alt="${p.caption}" ${i?'loading="lazy"':''}></button></div><div class="project-info"><div><div class="micro">${String(i+1).padStart(2,'0')} / ${p.type}</div><h3 class="project-title"><a href="/projects/${p.slug}/">${p.name}</a></h3><p>${p.desc}</p>${tags(p)}<div class="hero-actions" style="margin-top:16px">${p.github?external(p.github,'GitHub'):''}${p.live?external(p.live,'Live demo'):''}</div></div><a class="case-link" href="/projects/${p.slug}/">Read case study ↗</a></div></article>`;
-const homeContent=`<section class="hero" id="overview"><canvas id="matrix" aria-hidden="true"></canvas><div class="hero-layout"><div class="hero-content"><div class="eyebrow">WELCOME TO MY DIGITAL WORKSPACE</div><div class="intro-command"><span>visitor@aljun:~$</span> whoami</div><h1 aria-label="Aljun Agunas"><span class="name-decode" data-decode="ALJUN" aria-hidden="true">ALJUN</span><span class="green" aria-hidden="true"><span class="name-decode surname-shimmer" data-decode="AGUNAS">AGUNAS</span><span class="cursor"></span></span></h1><p class="hero-role">CST STUDENT <span>×</span> DEVELOPER</p><p class="hero-copy">I’m a Computer Systems Technology student in Regina. I build <b>web apps and Android projects</b>, troubleshoot computers, and learn by working through problems.</p><div class="hero-actions"><a class="btn primary" href="#projects">Explore projects <span>↘</span></a><button class="btn" id="hero-terminal">Launch terminal <span>⌘ K</span></button></div></div><div class="core-scene"><canvas id="system-core" aria-hidden="true"></canvas><div class="core-crosshair" aria-hidden="true"></div><div class="core-label"><span class="dot"></span> CREATIVE ENGINE / ACTIVE</div><div class="core-coordinate" aria-hidden="true">X 048.21<br>Y 091.07<br>Z 003.00</div><div class="core-caption">IDEAS → SYSTEMS → EXPERIENCES</div><div class="project-orbit">${projects.slice(0,3).map((p,i)=>`<button class="orbit-project orbit-${i}" data-open-project="${i}" aria-label="Preview ${p.name}"><img src="/assets/${p.image}" alt=""><span>0${i+1} / ${p.name} <b>↗</b></span></button>`).join('')}</div></div><div class="hero-stage project-window" hidden><div class="stage-top"><span><i class="dot"></i> PROJECT PREVIEW</span><span>RENDER_01</span><button id="close-project-window" aria-label="Close project preview">×</button></div><a id="stage-link" href="/projects/bowlstation/" class="stage-screen"><img id="stage-image" src="/assets/bowlstation.webp" alt="BOWLSTATION customer ordering interface"><span class="stage-overlay">OPEN CASE STUDY ↗</span></a><div class="stage-details"><span id="stage-title">BOWLSTATION</span><span id="stage-kind">FULL-STACK / RESTAURANT TECH</span></div><div class="stage-tabs" aria-label="Preview a project">${projects.map((p,i)=>`<button data-preview="${i}" class="${i===0?'active':''}" aria-pressed="${i===0}"><span>0${i+1}</span> ${p.name}</button>`).join('')}</div><div class="stage-bottom"><span>● PROJECT FILES</span><span>BUILT TO BE EXPLORED ↗</span></div></div></div><div class="launch-dock"><span class="dock-label">OPEN A PROJECT</span>${projects.map((p,i)=>`<button data-open-project="${i}"><span class="dock-number">0${i+1}</span><span>${p.name}<small>${i===2?'ANDROID APPLICATION':'FULL-STACK APPLICATION'}</small></span><b>↗</b></button>`).join('')}</div><div class="hero-foot"><span><span class="dot"></span>4 PROJECTS MOUNTED</span><span>REACT / NODE / KOTLIN</span><a href="#projects">SCROLL TO EXPLORE ↓</a></div></section>
-<section id="projects" class="section"><div class="section-head"><h2><span>01</span>Selected work<span style="color:#54745a;margin-left:10px;font-size:11px">/ projects</span></h2><div class="filterbar" aria-label="Filter projects"><button class="selected" data-filter="all" aria-pressed="true">All [04]</button><button data-filter="web" aria-pressed="false">Web [03]</button><button data-filter="mobile" aria-pressed="false">Mobile [01]</button></div></div><div id="project-list">${card(projects[0],0)}<div class="project-grid">${projects.slice(1).map((p,i)=>card(p,i+1)).join('')}</div></div></section>
-<section id="about" class="section"><div class="section-head"><h2><span>02</span>About me</h2><span class="micro">cat about.md</span></div><div class="two-col"><div class="body-copy"><p>I'm <strong>Aljun Agunas</strong>, a Computer Systems Technology student at Saskatchewan Polytechnic in Regina. I expect to finish my diploma in June 2027.</p><p>I enjoy figuring out why something is not working, whether that means troubleshooting a computer or tracking down a problem in an app. Outside class, I build and upgrade computers, help friends and family with their devices, and work on small websites, programs, and games.</p><p>My goal is to move into a technical role where I can keep developing my troubleshooting and programming skills. I’m interested in both the support side of technology and building software people can use.</p><p>I also bring experience from healthcare support and food-service work. Those jobs taught me to follow procedures, manage my time, work with others, and stay helpful when things get busy.</p></div><div class="codebox"><div class="config-text"><span class="muted">// developer.config</span><br>{<br>&nbsp; <span class="key">name</span>: "Aljun Agunas",<br>&nbsp; <span class="key">handle</span>: "devSatoruu",<br>&nbsp; <span class="key">focus</span>: ["Web", "AI", "Mobile"],<br>&nbsp; <span class="key">studying</span>: "Computer Systems Technology"<br>}</div><div class="config-visual" aria-hidden="true"><canvas id="config-core"></canvas><span class="config-caption">WEB / AI / MOBILE</span></div></div></div></section>
-<section id="skills" class="section"><div class="section-head"><h2><span>03</span>Skills & evidence</h2><span class="micro">ls ./skills --group</span></div><div class="skillgrid"><div class="skill"><h3>⌘ &nbsp; Interface</h3><p>JavaScript · React<br>HTML · CSS<br>Responsive design · Vite<br>React state · Browser storage</p></div><div class="skill"><h3>⇄ &nbsp; Systems & APIs</h3><p>Node.js · Express<br>SQLite · REST APIs<br>Gemini API integration<br>Session authentication</p></div><div class="skill"><h3>◇ &nbsp; Mobile & workflow</h3><p>Kotlin · Android<br>Game state · Touch controls<br>Git · GitHub<br>Render · Debugging</p></div></div><div class="skills-evidence"><h3>Where I’ve used these skills</h3><div class="evidence-grid"><article><h4>Problem-solving and debugging</h4><p>In TripCraft, I worked through schema and model-access errors when connecting Gemini. I explain what went wrong and how I handled it in the case study.</p><a href="/projects/tripcraft-ai/">See the TripCraft example ↗</a></article><article><h4>Planning and clear communication</h4><p>For BOWLSTATION, I planned separate customer and kitchen views. Guest labels show who each order belongs to, and status updates show what happens next.</p><a href="/projects/bowlstation/">See the ordering workflow ↗</a></article></div><article class="work-evidence"><h4>Teamwork, customer service, and time management</h4><p class="body-copy">At McDonald’s, I worked with the team to complete customer orders during busy shifts. In food service at Saskatchewan Health Authority, I coordinated tasks around meal periods. In my environmental-services role, I organize daily tasks and adjust when priorities change. My resume lists the roles and dates behind these examples.</p><a href="/resume.pdf" class="case-link">Read my work experience ↗</a></article><article class="work-evidence"><h4>Leadership and coordination — ongoing</h4><p class="body-copy">I lead our TCD AI Co-Pilot school project, oversee the work, and help with architecture, development, and documentation. The case study shows the current scope and explains what is still in progress.</p><a class="case-link" href="/projects/tcd-ai-copilot/">See my project-lead role ↗</a></article><h3 class="reflection-heading">Technical training</h3><p class="body-copy">My CST labs include hardware troubleshooting, client-device setup, software installation, and network configuration and testing. We use CompTIA material in our networking labs. I haven’t earned a CompTIA certification yet.</p></div></section>
-<section id="resume" class="section"><div class="section-head"><h2><span>04</span>Resume</h2><span class="micro">cat resume.txt</span></div><p class="body-copy">Aljun Agunas / Computer Systems Technology student<br>My education and work experience.</p><h3 class="reflection-heading">Education</h3><div class="resume-row"><div class="micro">EXPECTED JUNE 2027</div><div><h3>Computer Systems Technology Diploma</h3><p>Saskatchewan Polytechnic · Regina, SK</p><p>Hands-on labs in hardware troubleshooting, Enterprise Systems Support, device setup, software installation, and networking.</p></div></div><div class="resume-row"><div class="micro">JUNE 2017</div><div><h3>High School Diploma</h3><p>Archbishop M.C. O’Neill Catholic High School · Regina, SK</p><p>Computer Science coursework included programming exercises, small projects, and debugging.</p></div></div><h3 class="reflection-heading">Work experience</h3><div class="resume-row"><div class="micro">JAN 2022–PRESENT</div><div><h3>Environmental Service Worker · Saskatchewan Health Authority</h3><p>I follow hospital cleaning and safety procedures, use equipment and supplies properly, and organize daily tasks as priorities change.</p></div></div><div class="resume-row"><div class="micro">OCT 2020–APR 2022</div><div><h3>Food Service Worker · Saskatchewan Health Authority</h3><p>I prepared and delivered meals, followed sanitation procedures, and coordinated with the team during busy meal periods.</p></div></div><div class="resume-row"><div class="micro">APR 2016–JUL 2021</div><div><h3>Service Crew · McDonald’s</h3><p>I took customer orders, operated registers and food-service equipment, and worked with others to complete orders accurately.</p></div></div><div class="resume-actions"><a class="btn primary" href="/resume.pdf" download>Download resume (PDF) <span>↓</span></a><a class="btn" id="open-resume" href="/resume.pdf" target="_blank" rel="noopener">Open resume PDF <span>↗</span></a></div></section>
-<section id="contact" class="section contact"><div class="eyebrow">05 / OPEN A CONNECTION</div><h2>Want to ask<br>about my work?<span style="color:var(--g)">_</span></h2><p>If you have a question about my projects or want to talk about an opportunity, you can email me. My source code is on GitHub if you would like a closer look.</p><div class="contact-links"><a class="btn primary" href="mailto:aljun.agunas@yahoo.ca">Email me ↗</a>${external('https://github.com/devSatoruu','Find me on GitHub',true)}<button class="btn" id="copy-profile">Copy GitHub URL <span>⧉</span></button></div><p id="copy-status" role="status" style="min-height:20px;font-size:10px"></p><form id="contact-form" class="contact-form"><h3>Write a message</h3><label for="contact-name">Your name</label><input id="contact-name" name="name" required maxlength="100" autocomplete="name"><label for="contact-email">Your email</label><input id="contact-email" name="email" type="email" required maxlength="254" autocomplete="email"><label for="contact-message">Message</label><textarea id="contact-message" name="message" required maxlength="5000" rows="5"></textarea><button class="btn" type="submit">Open email draft ↗</button><p class="form-help">This opens your email app. Review the draft and send it from there, or email aljun.agunas@yahoo.ca directly.</p><p id="contact-status" role="status"></p></form></section>`;
-function caseContent(p){return `<article><div class="case-hero"><a class="back" href="/#projects">← cd ~/projects</a><div class="eyebrow">CASE STUDY / ${p.type}${p.status?' / '+p.status:''}</div><h1>${p.name}</h1><p class="hero-copy">${p.summary}</p>${tags(p)}<p class="body-copy project-role"><strong>Project focus:</strong> ${p.role}</p><div class="hero-actions">${p.github?external(p.github,'View source on GitHub',true):''}${p.live?external(p.live,'Open live demo'):''}</div></div><div class="case-image"><button style="padding:0;width:100%" data-image="${p.image}" data-caption="${p.caption}" aria-label="Expand project visual"><img src="/assets/${p.image}" alt="${p.caption}"></button><div class="image-caption">${p.caption} · Click to expand</div></div><section class="section"><div class="section-head"><h2><span>01</span>How I approached the project</h2><span class="micro">SITUATION / TASK / ACTION / RESULT</span></div><div class="star-grid">${p.star.map((s,i)=>`<div class="star"><div class="star-head"><span class="star-num">0${i+1}</span><h2>${s[0]}</h2></div><p>${s[1]}</p></div>`).join('')}</div></section><section class="section"><div class="section-head"><h2><span>02</span>What I learned</h2></div><p class="body-copy">${p.lesson}</p><h3 class="reflection-heading">What I would do next</h3><p class="body-copy">${p.future}</p><h3 class="reflection-heading">What the artifacts show</h3><p class="body-copy">${p.evidence}</p><p class="micro">SOURCE: ${p.slug==='tcd-ai-copilot'?'OCTOBER 2026 PROTOTYPE REQUIREMENTS':p.slug==='super-maria-sisters'?'PROJECT REPOSITORY AND ANDROID ACTIVITY IMPLEMENTATION':'PROJECT README'}</p></section>${p.slug==='tcd-ai-copilot'?`<section class="section"><div class="section-head"><h2>Prototype scope & current status</h2></div><div class="star-grid"><article class="star"><h3>Planned for V1</h3><p>Natural-language questions, approved TCD knowledge, basic next-step routing, risk-aware responses, and human handoff. A repeatable question library will evaluate accuracy, usefulness, safety, and routing.</p></article><article class="star"><h3>Still to confirm</h3><p>Client-approved routing, privacy and chat-history rules, and exact handoff wording. Backend API integration depends on the school-provided token. These are requirements and dependencies, not completed features.</p></article><article class="star"><h3>Outside the first release</h3><p>Private client-portal access, automated appointment changes, and deep personalization are outside the first working version. The assistant is not intended to provide independent legal, medical, or emergency advice.</p></article><article class="star"><h3>How progress will be measured</h3><p>The planned score sheet covers accuracy, helpfulness, appropriate routing, clear next steps, and human handoff. Test results will be added when the team has run and documented the benchmark.</p></article></div></section>`:''}${p.gallery?`<section class="section"><div class="section-head"><h2><span>03</span>Inside the project</h2></div><div class="gallery">${p.gallery.map(([img,label])=>`<button data-image="${img}" data-caption="${label}" aria-label="Expand ${label}"><img loading="lazy" src="/assets/${img}" alt="${label}"><p>${label} ↗</p></button>`).join('')}</div></section>`:''}<section class="section"><div class="section-head"><h2>Keep exploring</h2></div><div class="hero-actions">${projects.filter(x=>x!==p).map(x=>`<a class="btn" href="/projects/${x.slug}/">${x.name} ↗</a>`).join('')}<a class="btn primary" href="/#contact">Contact Aljun ↗</a></div></section></article>`}
-document.title=current?`${current.name} — Aljun Agunas`:'Aljun Agunas — Developer OS';
-document.querySelector('#app').innerHTML=`<header class="topbar"><a class="brand" href="/" aria-label="Aljun OS home">&gt;_ <span class="logo-decode" data-decode="ALJUN">ALJUN</span>.OS <small style="font-size:8px;color:#6d8d70;margin-left:8px">v1.0</small></a><div class="topmeta"><span class="kernel">PERSONAL DEVELOPMENT ENVIRONMENT</span><span class="online"><span class="dot"></span>SYSTEM ONLINE<span class="header-wave" aria-hidden="true"><i style="--i:0;--h:5px"></i><i style="--i:1;--h:10px"></i><i style="--i:2;--h:17px"></i><i style="--i:3;--h:9px"></i><i style="--i:4;--h:21px"></i><i style="--i:5;--h:13px"></i><i style="--i:6;--h:6px"></i><i style="--i:7;--h:16px"></i><i style="--i:8;--h:10px"></i></span></span><time class="clock"></time><button class="mobile-menu" aria-expanded="false" aria-controls="sidebar">☰ Menu</button></div></header><aside class="sidebar" id="sidebar"><p class="side-label">EXPLORER</p><nav class="nav" aria-label="Main navigation">${nav.map(([n,id,label])=>`<a href="/${home?'#':'#'}${id}" data-nav="${id}" class="${(current&&id==='projects')||(!current&&id==='overview')?'active':''}"><span>${n}</span>${label}${id==='projects'?'<small style="float:right;color:#5d7e61">04</small>':''}</a>`).join('')}</nav><div style="margin:25px 13px;color:#45614a;font-size:9px">────────────────<br><br><span style="color:#79977c">WORKSPACE</span><br>↳ portfolio / main<br>↳ 4 projects mounted</div><div class="workspace-signal" aria-hidden="true"><div class="signal-heading"><span>WORKSPACE SIGNAL</span><span class="signal-mark">◈</span></div><div class="signal-bars"><i style="--i:0;--h:22%"></i><i style="--i:1;--h:32%"></i><i style="--i:2;--h:48%"></i><i style="--i:3;--h:38%"></i><i style="--i:4;--h:62%"></i><i style="--i:5;--h:80%"></i><i style="--i:6;--h:55%"></i><i style="--i:7;--h:36%"></i><i style="--i:8;--h:48%"></i><i style="--i:9;--h:75%"></i><i style="--i:10;--h:95%"></i><i style="--i:11;--h:68%"></i><i style="--i:12;--h:40%"></i><i style="--i:13;--h:60%"></i><i style="--i:14;--h:83%"></i><i style="--i:15;--h:52%"></i><i style="--i:16;--h:30%"></i><i style="--i:17;--h:47%"></i><i style="--i:18;--h:65%"></i><i style="--i:19;--h:42%"></i><i style="--i:20;--h:28%"></i><i style="--i:21;--h:38%"></i><i style="--i:22;--h:23%"></i><i style="--i:23;--h:16%"></i></div><div class="signal-baseline"><span>01 / ALJUN.OS</span><span>▰ ▱ ▱</span></div></div><div class="side-bottom"><div class="side-logo">a.</div><strong>Aljun Agunas</strong><p>CST student & developer</p><a href="https://github.com/devSatoruu" target="_blank" rel="noopener noreferrer">↗ github / devSatoruu</a></div></aside><main id="main"><div class="pathbar"><span>aljun@portfolio:<b>~/${current?'projects/'+current.slug:'overview'}</b></span><span class="rightpath">UTF-8 &nbsp; / &nbsp; READ ONLY</span></div>${current?caseContent(current):homeContent}<footer class="page-footer"><span>© ${new Date().getFullYear()} Aljun Agunas</span><span>Last updated: October 28, 2026</span><a href="mailto:aljun.agunas@yahoo.ca">aljun.agunas@yahoo.ca</a><a href="/#overview">BACK TO TOP ↑</a></footer></main><footer class="statusbar"><div class="status-left"><button class="command-launch" aria-expanded="false" aria-controls="terminal">&gt;_ Open terminal</button><span class="branch">⑂ main*</span><span>✓ All systems operational</span></div><div><button id="effects" aria-pressed="true">CRT: ON</button> &nbsp; <b>⌘ / Ctrl + K</b></div></footer><section id="terminal" class="terminal" aria-label="Interactive command terminal"><div class="windowbar"><span>aljun@portfolio — bash</span><button id="close-terminal" aria-label="Close terminal">×</button></div><div class="term-output" role="log" aria-live="polite">ALJUN.OS [v1.0]\nType help to explore available commands.</div><form class="term-form"><label for="command">visitor:~$</label><input id="command" autocomplete="off" spellcheck="false" aria-label="Terminal command" placeholder="help"></form></section>`;
-// Visual preferences, navigation and keyboard-accessible image viewer.
-const effects=document.querySelector('#effects');let effectsOn=localStorage.getItem('crt')!=='off';function setEffects(){document.body.classList.toggle('effects-off',!effectsOn);effects.textContent='Effects: '+(effectsOn?'ON':'OFF');effects.setAttribute('aria-pressed',effectsOn)}setEffects();effects.onclick=()=>{effectsOn=!effectsOn;localStorage.setItem('crt',effectsOn?'on':'off');setEffects()};
-const menu=document.querySelector('.mobile-menu');menu.onclick=()=>{const open=document.querySelector('.sidebar').classList.toggle('shown');menu.setAttribute('aria-expanded',open)};document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('shown');menu.setAttribute('aria-expanded','false')}));
-const dialog=document.querySelector('#viewer');document.querySelectorAll('[data-image]').forEach(b=>b.onclick=()=>{dialog.querySelector('img').src='/assets/'+b.dataset.image;dialog.querySelector('img').alt=b.dataset.caption;dialog.querySelector('p').textContent=b.dataset.caption;dialog.showModal()});dialog.querySelector('.close').onclick=()=>dialog.close();dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
-if(home){document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',x===b)});document.querySelectorAll('.project').forEach(p=>p.hidden=b.dataset.filter!=='all'&&p.dataset.category!==b.dataset.filter)});const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===e.target.id));document.querySelector('.pathbar b').textContent='~/'+e.target.id}})},{rootMargin:'-15% 0px -65% 0px'});document.querySelectorAll('main>section').forEach(s=>observer.observe(s));document.querySelector('#copy-profile').onclick=async()=>{const s=document.querySelector('#copy-status');try{await navigator.clipboard.writeText('https://github.com/devSatoruu');s.textContent='✓ GitHub URL copied to clipboard.'}catch{s.textContent='GitHub URL: https://github.com/devSatoruu'}}}
-const terminal=document.querySelector('#terminal'),input=document.querySelector('#command'),output=document.querySelector('.term-output'),launcher=document.querySelector('.command-launch');function toggleTerminal(open){terminal.classList.toggle('open',open);launcher.setAttribute('aria-expanded',open);if(open)input.focus();else launcher.focus()}launcher.onclick=()=>toggleTerminal(!terminal.classList.contains('open'));document.querySelector('#close-terminal').onclick=()=>toggleTerminal(false);document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();toggleTerminal(!terminal.classList.contains('open'))}if(e.key==='Escape'){if(terminal.classList.contains('open'))toggleTerminal(false);document.querySelector('.sidebar').classList.remove('shown');menu.setAttribute('aria-expanded','false')}});
-const history=[];let hi=0;input.addEventListener('keydown',e=>{if(e.key==='ArrowUp'){e.preventDefault();hi=Math.max(0,hi-1);input.value=history[hi]||''}if(e.key==='ArrowDown'){e.preventDefault();hi=Math.min(history.length,hi+1);input.value=history[hi]||''}});document.querySelector('.term-form').onsubmit=e=>{e.preventDefault();const raw=input.value.trim();input.value='';if(!raw)return;history.push(raw);hi=history.length;const cmd=raw.toLowerCase().replace(/\/$/,'');output.textContent+='\nvisitor:~$ '+raw;let result='';if(cmd==='clear'){output.textContent='';return}if(cmd==='help')result='Available commands:\n  ls              List portfolio sections\n  whoami          About Aljun\n  cd projects     Go to selected work\n  cd about        Read about me\n  cd skills       Open toolbox\n  cat resume.txt  Open resume\n  contact         Open contact\n  open bowlstation | tripcraft-ai | super-maria-sisters\n  pwd · date · clear\nUse ↑ / ↓ for command history. Escape closes terminal.';else if(cmd==='ls')result='overview/  projects/  about/  skills/  resume.txt  contact/';else if(cmd==='whoami')result='Aljun Agunas (@devSatoruu)\nDeveloper exploring full-stack web, AI integration, and Android.';else if(cmd==='pwd')result='/home/aljun/portfolio';else if(cmd==='date')result=new Date().toString();else if(cmd.startsWith('open ')){const p=projects.find(p=>p.slug===cmd.slice(5));if(p){location.href='/projects/'+p.slug+'/';return}result='Project not found. Type ls or help.'}else{const section=cmd==='cat resume.txt'?'resume':cmd==='contact'?'contact':cmd.startsWith('cd ')?cmd.slice(3).replace('~/',''):'';if(nav.some(n=>n[1]===section)){location.href='/#'+section;toggleTerminal(false);return}result='bash: '+raw+': command not found. Type help.'}output.textContent+='\n'+result+'\n';output.scrollTop=output.scrollHeight};
-function clock(){document.querySelector('.clock').textContent=new Date().toLocaleTimeString('en-GB',{hour12:false})}clock();setInterval(clock,1000);
-// OS showcase and ambient rendering. Animations respect motion preferences.
-if(home){
- document.querySelector('#hero-terminal').onclick=()=>toggleTerminal(true);
- document.querySelectorAll('[data-preview]').forEach(button=>button.onclick=()=>{const p=projects[Number(button.dataset.preview)];document.querySelector('#stage-image').src='/assets/'+p.image;document.querySelector('#stage-image').alt=p.caption;document.querySelector('#stage-link').href='/projects/'+p.slug+'/';document.querySelector('#stage-title').textContent=p.name;document.querySelector('#stage-kind').textContent=p.type;document.querySelector('.stage-top>span:nth-child(2)').textContent='RENDER_0'+(Number(button.dataset.preview)+1);document.querySelectorAll('[data-preview]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',b===button)})});
- const motion=matchMedia('(prefers-reduced-motion: reduce)');
- if(!motion.matches){
-  const canvas=document.querySelector('#matrix'),ctx=canvas.getContext('2d');let drops=[],width=0,height=0,last=0;
-  function resize(){width=canvas.clientWidth;height=canvas.clientHeight;canvas.width=width;canvas.height=height;drops=Array.from({length:Math.ceil(width/22)},()=>Math.random()*height/22)}
-  resize();new ResizeObserver(resize).observe(canvas);
-  function rain(time){requestAnimationFrame(rain);if(time-last<85||document.hidden||document.body.classList.contains('effects-off')||motion.matches)return;last=time;ctx.fillStyle='rgba(0,5,0,.12)';ctx.fillRect(0,0,width,height);ctx.font='12px monospace';drops.forEach((y,i)=>{ctx.fillStyle=Math.random()>.98?'#d7ffb7':'#4a8032';ctx.fillText('01アイウエオカキクケコ<>/{}'[Math.floor(Math.random()*22)],i*22,y*22);if(y*22>height&&Math.random()>.98)drops[i]=0;else drops[i]+=.45})}requestAnimationFrame(rain);
-  if(!sessionStorage.getItem('aljun-booted')){sessionStorage.setItem('aljun-booted','1');const boot=document.createElement('div');boot.className='boot-screen';boot.innerHTML='<div class="boot-inner"><div class="boot-logo">ALJUN.OS</div><div class="boot-line"><span>[ OK ]</span> Initializing developer environment</div><div class="boot-line"><span>[ OK ]</span> Mounting projects / 04 found</div><div class="boot-line"><span>[ OK ]</span> Opening a window into my work</div><div class="boot-track"><i></i></div><div class="boot-bottom"><span>WELCOME TO MY WORKSPACE</span><button>Skip intro ↗</button></div></div>';document.body.append(boot);const dismiss=()=>{boot.classList.add('leaving');setTimeout(()=>boot.remove(),400)};boot.querySelector('button').onclick=dismiss;setTimeout(dismiss,1100)}
- }
-}
-if(home){
- const win=document.querySelector('.project-window');let opener=null;
- win.setAttribute('role','dialog');win.setAttribute('aria-modal','true');win.setAttribute('aria-label','Project preview');
- const closeWindow=()=>{win.hidden=true;opener?.focus()};
- document.querySelectorAll('[data-open-project]').forEach(b=>b.onclick=()=>{opener=b;win.hidden=false;document.querySelector(`[data-preview="${b.dataset.openProject}"]`).click();document.querySelector('#close-project-window').focus()});
- document.querySelector('#close-project-window').onclick=closeWindow;
- win.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();closeWindow()}if(e.key==='Tab'){const focusable=[...win.querySelectorAll('a,button')];const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
- const canvas=document.querySelector('#system-core'),ctx=canvas.getContext('2d'),scene=document.querySelector('.core-scene');const reduce=matchMedia('(prefers-reduced-motion: reduce)');let w=0,h=0,px=0,py=0,visible=true,last=0;
- const points=Array.from({length:650},(_,i)=>{const y=1-2*i/649,r=Math.sqrt(1-y*y),angle=i*Math.PI*(3-Math.sqrt(5));return [Math.cos(angle)*r,y,Math.sin(angle)*r]});
- function sizeCore(){w=scene.clientWidth;h=scene.clientHeight;const d=Math.min(devicePixelRatio,2);canvas.width=w*d;canvas.height=h*d;ctx.setTransform(d,0,0,d,0,0);drawCore(0)}
- function drawCore(t){ctx.clearRect(0,0,w,h);const radius=Math.min(w*.34,h*.36),cx=w*.53,cy=h*.49,angle=t*.00016+px*.4,tilt=.22+py*.15;const ca=Math.cos(angle),sa=Math.sin(angle),ct=Math.cos(tilt),st=Math.sin(tilt);let projected=points.map(([x,y,z])=>{const xx=x*ca+z*sa,zz=z*ca-x*sa,yy=y*ct-zz*st,depth=y*st+zz*ct;return [cx+xx*radius,cy+yy*radius,depth]});projected.sort((a,b)=>a[2]-b[2]);for(const [x,y,z] of projected){const a=(z+1)/2;ctx.fillStyle=`rgba(${140+Math.round(a*90)},255,${80+Math.round(a*90)},${.16+a*.75})`;ctx.beginPath();ctx.arc(x,y,.55+a*1.1,0,Math.PI*2);ctx.fill()}
- ctx.save();ctx.translate(cx,cy);ctx.rotate(-.35);for(let i=0;i<3;i++){ctx.strokeStyle=i===1?'rgba(170,255,95,.4)':'rgba(140,220,70,.13)';ctx.lineWidth=i===1?.8:.5;ctx.beginPath();ctx.ellipse(0,0,radius*(1.3+i*.12),radius*(.36+i*.09),i*.12,0,Math.PI*2);ctx.stroke();const phase=t*.0005*(i%2?-1:1)+i*2.1;const orbitX=Math.cos(phase)*radius*(1.3+i*.12),orbitY=Math.sin(phase)*radius*(.36+i*.09);ctx.fillStyle='#ceffa4';ctx.shadowColor='#aaff65';ctx.shadowBlur=12;ctx.beginPath();ctx.arc(orbitX,orbitY,2.3,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0}ctx.restore();ctx.fillStyle='#aaff87';ctx.font='8px monospace';ctx.textAlign='center';ctx.fillText('A G / CORE',cx,cy+3);ctx.strokeStyle='#aaff8733';ctx.strokeRect(cx-39,cy-13,78,25)}
- scene.addEventListener('pointermove',e=>{const r=scene.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5});scene.addEventListener('pointerleave',()=>{px=py=0});new ResizeObserver(sizeCore).observe(scene);new IntersectionObserver(([e])=>visible=e.isIntersecting).observe(scene);sizeCore();
- function frame(t){requestAnimationFrame(frame);if(t-last<32||!visible||document.hidden||reduce.matches||document.body.classList.contains('effects-off'))return;last=t;drawCore(t)}requestAnimationFrame(frame);reduce.addEventListener('change',()=>drawCore(0));
-}
-// Progressive motion enhancements: content stays accessible without animation.
-{
- const reduced=matchMedia('(prefers-reduced-motion: reduce)'),finePointer=matchMedia('(hover: hover) and (pointer: fine)');
- const enabled=()=>!reduced.matches&&!document.body.classList.contains('effects-off');
- const progress=document.createElement('div');progress.className='reading-progress';progress.setAttribute('aria-hidden','true');document.body.append(progress);
- let scheduled=false;function updateProgress(){const distance=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${distance>0?Math.min(1,scrollY/distance):0})`;scheduled=false}addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(updateProgress)}},{passive:true});addEventListener('resize',updateProgress);updateProgress();
- const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');revealObserver.unobserve(e.target)}}),{threshold:.06,rootMargin:'0px 0px -20px 0px'});
- document.querySelectorAll('.project,.two-col,.skillgrid,.resume-row,.star,.gallery button').forEach(el=>{if(el.getBoundingClientRect().top>innerHeight&&enabled()){el.classList.add('motion-reveal');revealObserver.observe(el)}});
- document.querySelectorAll('.skill').forEach(el=>{const cube=document.createElement('span');cube.className='mini-cube';cube.setAttribute('aria-hidden','true');cube.innerHTML='<i></i>'.repeat(6);el.append(cube)});
- document.querySelectorAll('.project').forEach(card=>{card.classList.add('depth-card');let pending=false,lastX=0,lastY=0;card.addEventListener('pointermove',e=>{if(!enabled()||!finePointer.matches)return;lastX=e.clientX;lastY=e.clientY;if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;const r=card.getBoundingClientRect(),x=Math.max(0,Math.min(1,(lastX-r.left)/r.width)),y=Math.max(0,Math.min(1,(lastY-r.top)/r.height));card.style.setProperty('--rx',`${(y-.5)*-5}deg`);card.style.setProperty('--ry',`${(x-.5)*5}deg`);card.style.setProperty('--mx',`${x*100}%`);card.style.setProperty('--my',`${y*100}%`);card.classList.add('tilting')})});card.addEventListener('pointerleave',()=>card.classList.remove('tilting'))});
- document.querySelectorAll('[data-preview]').forEach(b=>b.addEventListener('click',()=>{if(!enabled())return;const screen=document.querySelector('.stage-screen');screen.classList.remove('switching');requestAnimationFrame(()=>screen.classList.add('switching'))}));
- document.addEventListener('visibilitychange',()=>document.body.classList.toggle('motion-paused',document.hidden));
- reduced.addEventListener('change',()=>{if(reduced.matches){document.querySelectorAll('.motion-reveal').forEach(el=>el.classList.add('revealed'));document.querySelectorAll('.tilting').forEach(el=>el.classList.remove('tilting'))}});
-}
+// ALJUN.OS — clean editable project data and HTML snippets
+// Aljun Agunas Portfolio — readable source
+// EDIT PROJECTS: Change names, descriptions, roles, and STAR stories in the projects array below.
+// EDIT HOMEPAGE: Search for <section id="about">, <section id="skills">, or <section id="resume">.
+// HTML snippets are joined without whitespace changes, so the live design stays identical.
 
-if(home){document.querySelector('#contact-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const name=form.elements.name.value.trim(),email=form.elements.email.value.trim(),message=form.elements.message.value.trim();const subject=encodeURIComponent('Portfolio inquiry from '+name),body=encodeURIComponent('Name: '+name+'\nReply email: '+email+'\n\n'+message);location.href='mailto:aljun.agunas@yahoo.ca?subject='+subject+'&body='+body;document.querySelector('#contact-status').textContent='Email draft requested. If your email app does not open, use the address above. This form has not sent a message.'})}
-
-// Lightweight Matrix pointer trail; sleeps when there are no visible glyphs.
-{
- const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- const pointer=matchMedia('(hover: hover) and (pointer: fine)');
- const canvas=document.createElement('canvas');
- canvas.className='matrix-pointer-trail';canvas.setAttribute('aria-hidden','true');
- document.body.append(canvas);
- const ctx=canvas.getContext('2d');
- if(ctx){
-  const glyphs='01アイウエオカキクケコ<>/{}';
-  let particles=[],frameId=0,previous=null,lastSpawn=0;
-  const enabled=()=>pointer.matches&&!reduced.matches&&!document.hidden&&!document.body.classList.contains('effects-off');
-  function clear(){cancelAnimationFrame(frameId);frameId=0;particles=[];previous=null;ctx.clearRect(0,0,innerWidth,innerHeight)}
-  function resize(){clear();const scale=Math.min(devicePixelRatio||1,2);canvas.width=innerWidth*scale;canvas.height=innerHeight*scale;ctx.setTransform(scale,0,0,scale,0,0)}
-  function draw(now){
-   frameId=0;if(!enabled()){clear();return}
-   ctx.clearRect(0,0,innerWidth,innerHeight);
-   particles=particles.filter(p=>now-p.born<p.life);
-   ctx.font='12px monospace';ctx.textAlign='center';
-   for(const p of particles){const age=(now-p.born)/p.life;ctx.globalAlpha=(1-age)*.65;ctx.fillStyle=age<.15?'#d8ffc7':'#93ff68';ctx.fillText(p.glyph,p.x+p.drift*age,p.y+age*27)}
-   ctx.globalAlpha=1;
-   if(particles.length)frameId=requestAnimationFrame(draw);
+// Project information shared by the cards and case study pages.
+const projects = [
+  {
+    "slug": "bowlstation",
+    "name": "BOWLSTATION",
+    "type": "FULL-STACK / RESTAURANT TECH",
+    "category": "web",
+    "image": "bowlstation.webp",
+    "caption": "Live application capture · Customer ordering menu",
+    "desc": "A restaurant menu where customers order from their table and follow their order status.",
+    "tags": [
+      "React",
+      "Express",
+      "SQLite",
+      "REST API"
+    ],
+    "github": "https://github.com/devSatoruu/bowlstation",
+    "live": "https://bowlstation.onrender.com/?table=1",
+    "summary": "A QR restaurant ordering system with a mobile menu, independent guest orders, private tracking, and a protected kitchen dashboard.",
+    "star": [
+      [
+        "Situation",
+        "I wanted to explore how a restaurant could handle table orders without relying on handwritten tickets. Customers also needed a way to see what was happening after they placed an order. I used a fictional restaurant so I could build and test the workflow as a portfolio project."
+      ],
+      [
+        "Task",
+        "The goal was to connect the customer menu with a separate kitchen dashboard. One detail mattered a lot: people at the same table should be able to order separately, without seeing each other’s private order details."
+      ],
+      [
+        "Action",
+        "I connected a React frontend to an Express API and a SQLite database. The customer side includes menu filters, a cart, guest and seat labels, and special instructions. On the kitchen side, orders move through Pending, Preparing, Ready, and Completed. Staff access uses a password-protected session, while customers track orders using credentials stored in their own browser."
+      ],
+      [
+        "Result",
+        "The prototype supports the full ordering flow, from a table-specific link to a kitchen order. The menu has eight items, and guests can place separate orders at the same table. This is a demo rather than a real restaurant service, so there are no payments or customer-impact figures to report."
+      ]
+    ],
+    "lesson": "This project helped me think beyond the page someone sees. A table number tells the kitchen where an order belongs, but it should not give a customer access to every order at that table. Keeping those two ideas separate was an important part of the design.",
+    "role": "Full-stack web development: the customer ordering flow, backend API, and kitchen dashboard.",
+    "future": "The next improvement I would focus on is testing the complete flow with several customers ordering at once. I would check that order ownership and status updates stay correct as the queue grows.",
+    "evidence": "The screenshot shows the menu customers use to order. You can try the menu and cart in the live demo, or look through the code for the kitchen dashboard and order tracking on GitHub."
+  },
+  {
+    "slug": "tripcraft-ai",
+    "name": "TripCraft AI",
+    "type": "FULL-STACK / AI INTEGRATION",
+    "category": "web",
+    "image": "trip-explore.webp",
+    "caption": "Repository screenshot · Explore and trip preferences",
+    "desc": "A travel planner that creates a daily itinerary you can edit and save.",
+    "tags": [
+      "React",
+      "Node.js",
+      "Gemini API",
+      "localStorage"
+    ],
+    "github": "https://github.com/devSatoruu/tripcraft-ai",
+    "live": "https://tripcraft-ai-o4ad.onrender.com/",
+    "summary": "An AI travel planner that turns a destination, duration, budget, and interests into an editable day-by-day itinerary.",
+    "star": [
+      [
+        "Situation",
+        "I built TripCraft AI to practise connecting a web application to an AI service. The idea was to turn a destination, trip length, budget, and interests into a daily plan that the user could still change."
+      ],
+      [
+        "Task",
+        "I needed to connect React to an Express backend, get a usable response from Gemini, and let users edit and save the result. I also needed to handle the cases where the AI request failed."
+      ],
+      [
+        "Action",
+        "I created an endpoint for trip generation and kept the API key on the server. When I ran into model-access and JSON-schema errors, I adjusted the configuration, corrected the schema, and added response validation. I also added retries and a clearly labeled demo fallback. React manages the selected day and activity edits, while localStorage keeps saved trips in the same browser."
+      ],
+      [
+        "Result",
+        "The deployed app can generate a day-by-day plan, let the user add or edit activities, and save trips locally. If a supported AI error occurs, the app can show a labeled sample itinerary. Working through the integration gave me more practice debugging requests between the frontend, backend, and an external service."
+      ]
+    ],
+    "lesson": "One thing I learned was that a successful API call is only part of the feature. The user also needs to know when a request is loading, when something failed, and whether they are looking at AI output or demo data. I also got more comfortable updating nested React state without changing the original objects.",
+    "gallery": [
+      [
+        "trip-itinerary.webp",
+        "Generated itinerary"
+      ],
+      [
+        "trip-activity-editor.webp",
+        "Activity editor"
+      ],
+      [
+        "trip-saved-trips.webp",
+        "Saved trips"
+      ]
+    ],
+    "role": "Full-stack web development and Gemini API integration, including itinerary editing and saved trips.",
+    "future": "I would next work on cloud storage so saved trips could be opened on another device. I would also look at a reliable place-data API, since generated suggestions do not verify opening hours, prices, or bookings.",
+    "evidence": "These screenshots show the trip form, daily itinerary, activity editor, and saved trips. The code on GitHub includes the Gemini connection and error handling."
+  },
+  {
+    "slug": "super-maria-sisters",
+    "name": "Super Maria Sisters",
+    "type": "ANDROID / MOBILE GAME",
+    "category": "mobile",
+    "image": "maria-gameplay.webp",
+    "caption": "Super Maria Sisters gameplay — character, obstacles, score, coins, and touch controls.",
+    "desc": "An Android game with jump and slide controls, scoring, and pause and restart states.",
+    "tags": [
+      "Kotlin",
+      "Android",
+      "Game state",
+      "Touch UI"
+    ],
+    "github": "https://github.com/devSatoruu/super-maria-sisters",
+    "summary": "A mobile programming project with jump and slide controls, score and coin displays, and start, pause, and restart interactions.",
+    "star": [
+      [
+        "Situation",
+        "Super Maria Sisters is a mobile programming project. The interface needed to keep up with the game: the controls shown during play should be different from those shown at the start or after game over."
+      ],
+      [
+        "Task",
+        "The objective was to connect the Android controls to the game view and keep the score, coins, and button visibility in sync with the current state."
+      ],
+      [
+        "Action",
+        "The Kotlin activity connects the jump, slide, pause, start, and restart buttons to GameView methods. Score and coin callbacks update the labels, and the game-over callback changes which controls are visible. The screenshots show the welcome screen and gameplay with the on-screen controls."
+      ],
+      [
+        "Result",
+        "The game includes a welcome screen, a scrolling desert level, score and coin counters, and jump and slide controls. The screenshots show the character running and sliding past an obstacle. The repository includes the Android implementation and game assets; there is no browser demo for this project."
+      ]
+    ],
+    "lesson": "The controls need to match what is happening in the game. For example, pausing or ending a run changes which buttons should be available. Keeping the game view and the Android controls in sync is a key part of this project.",
+    "gallery": [
+      [
+        "maria-welcome.webp",
+        "Welcome screen with Start and Settings controls"
+      ],
+      [
+        "maria-slide.webp",
+        "Sliding under an obstacle during gameplay"
+      ]
+    ],
+    "role": "My main responsibilities in our group project were implementing the gameplay controls, including jumping and sliding, and working on character animations.",
+    "future": "The next step would be to test the controls and pause/restart flow on different Android screen sizes, then add a short gameplay recording to show the movement and transitions in action.",
+    "evidence": "The screenshots show the welcome screen, running, and sliding under an obstacle. You can also see the score, coins, and touch controls. The Android code is on GitHub."
+  },
+  {
+    "slug": "tcd-ai-copilot",
+    "name": "TCD AI Co-Pilot",
+    "type": "TEAM PROJECT / AI PROTOTYPE",
+    "category": "web",
+    "status": "IN PROGRESS",
+    "image": "tcd-architecture.svg",
+    "caption": "Planned architecture diagram, redrawn from the October 2026 Prototype V1 requirements. Not a live-system screenshot.",
+    "desc": "An ongoing school team project for The Clean Divorce. I lead the project and contribute to architecture, development, and documentation.",
+    "tags": [
+      "Project leadership",
+      "System architecture",
+      "Lovable (planned)",
+      "OpenAI API (planned)"
+    ],
+    "summary": "We are working on an AI assistant that uses approved information from The Clean Divorce to answer questions, suggest appropriate next steps, and recognize when a person should speak to a professional.",
+    "role": "Project leader. I oversee the overall work and help across system architecture, development, and documentation.",
+    "star": [
+      [
+        "Situation",
+        "Our school team is working on an AI Co-Pilot for The Clean Divorce. The aim is to go beyond a basic FAQ chatbot while keeping the first prototype realistic for the course timeline. The requirements call for approved knowledge, clear next steps, and human support when a question needs it."
+      ],
+      [
+        "Task",
+        "As project leader, I oversee the project and help with system architecture, development, and documentation. I keep track of how the different parts fit together and help the team stay on the same page."
+      ],
+      [
+        "Action",
+        "I work across the technical and documentation sides instead of only coordinating tasks. The current requirements outline a Lovable interface, backend integration with the OpenAI API, approved organizational knowledge, and routing and risk checks. They also separate what belongs in Prototype V1 from later features. The team still needs client approval for some routing, privacy, and handoff rules before treating them as final system behavior."
+      ],
+      [
+        "Result",
+        "The project is still in progress. We have updated the Prototype V1 requirements to cover the scope, planned architecture, deliverables, and testing. Next, we need to confirm the remaining client questions, prepare the knowledge and test questions, and connect the API. We don’t have final test results yet."
+      ]
+    ],
+    "lesson": "Leading this project is making me pay attention to how decisions in one area affect the others. A change to the routing rules can affect the prompt, the interface, the test cases, and the documentation. I need to keep that bigger picture in mind while also helping with the actual work.",
+    "future": "Next, we need to resolve the open client questions, prepare the approved knowledge and benchmark questions, and connect the backend when the school-provided API token is available. Testing will look at accuracy, helpfulness, routing, safety, and whether the response gives a clear next step.",
+    "evidence": "I’ve included a diagram of the planned system and a summary of the current scope below. This is still a work in progress, so the diagram shows what we plan to build."
   }
-  document.addEventListener('pointermove',e=>{
-   if(e.pointerType!=='mouse'||!enabled()){clear();return}
-   const now=performance.now();
-   if(previous&&Math.hypot(e.clientX-previous.x,e.clientY-previous.y)<9)return;
-   if(now-lastSpawn<24)return;
-   const distance=previous?Math.hypot(e.clientX-previous.x,e.clientY-previous.y):0;
-   const count=Math.min(3,Math.max(1,Math.floor(distance/18)));
-   for(let i=0;i<count;i++){const t=(i+1)/count;
-    particles.push({x:previous?previous.x+(e.clientX-previous.x)*t:e.clientX,y:(previous?previous.y+(e.clientY-previous.y)*t:e.clientY)+15,born:now,life:420+Math.random()*260,drift:(Math.random()-.5)*16,glyph:glyphs[Math.floor(Math.random()*glyphs.length)]});
-   }
-   particles=particles.slice(-60);previous={x:e.clientX,y:e.clientY};lastSpawn=now;
-   if(!frameId)frameId=requestAnimationFrame(draw);
-  },{passive:true});
-  document.documentElement.addEventListener('pointerleave',()=>{previous=null});
-  addEventListener('blur',clear);addEventListener('resize',resize,{passive:true});
-  document.addEventListener('visibilitychange',clear);
-  reduced.addEventListener('change',clear);pointer.addEventListener('change',clear);
-  effects.addEventListener('click',clear);resize();
- }
-}
+];
 
-// One short decode on entry; the real name stays available to screen readers.
-{
- const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- const targets=[...document.querySelectorAll('[data-decode]')];
- const enabled=()=>!reduced.matches&&!document.hidden&&!document.body.classList.contains('effects-off');
- let timer=0,frame=0,last=0,start=0;
- function finish(){clearTimeout(timer);cancelAnimationFrame(frame);targets.forEach(el=>{el.textContent=el.dataset.decode;el.style.removeProperty('width')});}
- function tick(now){
-  if(!enabled()){finish();return}
-  if(!start)start=now;
-  const elapsed=now-start;
-  if(elapsed>=850){finish();return}
-  if(now-last>55){last=now;targets.forEach(el=>{const word=el.dataset.decode,resolved=Math.floor(elapsed/850*(word.length+1));el.textContent=[...word].map((c,i)=>i<resolved?c:'01<>/{}ABCDEFGHIJKLMNOPQRSTUVWXYZ'[Math.floor(Math.random()*32)]).join('')})}
-  frame=requestAnimationFrame(tick);
- }
- // Let the existing boot screen finish before revealing the name.
- if(enabled())timer=setTimeout(()=>{if(!enabled())return;targets.forEach(el=>el.style.width=el.getBoundingClientRect().width+'px');frame=requestAnimationFrame(tick)},document.querySelector('.boot-screen')?1450:180);
- effects.addEventListener('click',finish);reduced.addEventListener('change',finish);document.addEventListener('visibilitychange',finish);
- const name=document.querySelector('.hero h1');let sweepTimer=0;
- name?.addEventListener('pointerenter',e=>{if(e.pointerType!=='mouse'||!enabled()||name.classList.contains('name-hover-sweep'))return;name.classList.add('name-hover-sweep');clearTimeout(sweepTimer);sweepTimer=setTimeout(()=>name.classList.remove('name-hover-sweep'),1300)});
-}
+// Check the URL to determine which page to display.
+const caseSlug = location.pathname.split('/').filter(Boolean)[1];
+const current = projects.find(p => p.slug === caseSlug);
+const home = !current;
+const nav = [['00', 'overview', 'Overview'], ['01', 'projects', 'Projects'], ['02', 'about', 'About me'], ['03', 'skills', 'Skills & evidence'], ['04', 'resume', 'Resume'], ['05', 'contact', 'Contact']];
+// Helpers for external links, technology tags, and project cards.
+const external = (url, label, primary = false) => [
+  `<a class="btn ${primary ? 'primary' : ''}" href="${url}" target="_blank" rel="noopener noreferrer">${label}<span>↗`,
+  `</span>`,
+  `</a>`
+].join('');
+const tags = p => `<div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
+const card = (p, i) => [
+  `<article class="project" data-category="${p.category}">`,
+  `<div class="windowbar">`,
+  `<span>`,
+  `<span class="dots">`,
+  `<i>`,
+  `</i>`,
+  `<i>`,
+  `</i>`,
+  `<i>`,
+  `</i>`,
+  `</span>~/projects/${p.slug}</span>`,
+  `<span>${p.status ? '◌ ' + p.status : p.live ? '● LIVE' : '◈ ANDROID'}</span>`,
+  `</div>`,
+  `<div class="project-cover">`,
+  `<button data-image="${p.image}" data-caption="${p.caption}" aria-label="Expand ${p.name} ${p.slug === 'tcd-ai-copilot' ? 'architecture diagram' : 'screenshot'}"><img src="/assets/${p.image}" alt="${p.caption}" ${i ? 'loading="lazy"' : ''}>`,
+  `</button>`,
+  `</div>`,
+  `<div class="project-info">`,
+  `<div>`,
+  `<div class="micro">${String(i + 1).padStart(2, '0')} / ${p.type}</div>`,
+  `<h3 class="project-title">`,
+  `<a href="/projects/${p.slug}/">${p.name}</a></h3><p>${p.desc}</p>${tags(p)}<div class="hero-actions" style="margin-top:16px">${p.github ? external(p.github, 'GitHub') : ''}${p.live ? external(p.live, 'Live demo') : ''}</div>`,
+  `</div>`,
+  `<a class="case-link" href="/projects/${p.slug}/">Read case study ↗</a></div></article>`
+].join('');
+// Homepage sections: intro, projects, about, skills, resume, and contact.
+const homeContent = [
+  `<section class="hero" id="overview">`,
+  `<canvas id="matrix" aria-hidden="true">`,
+  `</canvas>`,
+  `<div class="hero-layout">`,
+  `<div class="hero-content">`,
+  `<div class="eyebrow">WELCOME TO MY DIGITAL WORKSPACE`,
+  `</div>`,
+  `<div class="intro-command">`,
+  `<span>visitor@aljun:~$`,
+  `</span> whoami`,
+  `</div>`,
+  `<h1 aria-label="Aljun Agunas">`,
+  `<span class="name-decode" data-decode="ALJUN" aria-hidden="true">ALJUN`,
+  `</span>`,
+  `<span class="green" aria-hidden="true">`,
+  `<span class="name-decode surname-shimmer" data-decode="AGUNAS">AGUNAS`,
+  `</span>`,
+  `<span class="cursor">`,
+  `</span>`,
+  `</span>`,
+  `</h1>`,
+  `<p class="hero-role">CST STUDENT `,
+  `<span>×`,
+  `</span> DEVELOPER`,
+  `</p>`,
+  `<p class="hero-copy">I’m a Computer Systems Technology student in Regina. I build `,
+  `<b>web apps and Android projects`,
+  `</b>, troubleshoot computers, and learn by working through problems.`,
+  `</p>`,
+  `<div class="hero-actions">`,
+  `<a class="btn primary" href="#projects">Explore projects `,
+  `<span>↘`,
+  `</span>`,
+  `</a>`,
+  `<button class="btn" id="hero-terminal">Launch terminal `,
+  `<span>⌘ K`,
+  `</span>`,
+  `</button>`,
+  `</div>`,
+  `</div>`,
+  `<div class="core-scene">`,
+  `<canvas id="system-core" aria-hidden="true">`,
+  `</canvas>`,
+  `<div class="core-crosshair" aria-hidden="true">`,
+  `</div>`,
+  `<div class="core-label">`,
+  `<span class="dot">`,
+  `</span> CREATIVE ENGINE / ACTIVE`,
+  `</div>`,
+  `<div class="core-coordinate" aria-hidden="true">X 048.21`,
+  `<br>Y 091.07`,
+  `<br>Z 003.00`,
+  `</div>`,
+  `<div class="core-caption">IDEAS → SYSTEMS → EXPERIENCES`,
+  `</div>`,
+  `<div class="project-orbit">${projects.slice(0, 3).map((p, i) => [
+    `<button class="orbit-project orbit-${i}" data-open-project="${i}" aria-label="Preview ${p.name}"><img src="/assets/${p.image}" alt="">`,
+    `<span>0${i + 1} / ${p.name} <b>↗</b></span></button>`
+  ].join('')).join('')}</div>`,
+  `</div>`,
+  `<div class="hero-stage project-window" hidden>`,
+  `<div class="stage-top">`,
+  `<span>`,
+  `<i class="dot">`,
+  `</i> PROJECT PREVIEW`,
+  `</span>`,
+  `<span>RENDER_01`,
+  `</span>`,
+  `<button id="close-project-window" aria-label="Close project preview">×`,
+  `</button>`,
+  `</div>`,
+  `<a id="stage-link" href="/projects/bowlstation/" class="stage-screen">`,
+  `<img id="stage-image" src="/assets/bowlstation.webp" alt="BOWLSTATION customer ordering interface">`,
+  `<span class="stage-overlay">OPEN CASE STUDY ↗`,
+  `</span>`,
+  `</a>`,
+  `<div class="stage-details">`,
+  `<span id="stage-title">BOWLSTATION`,
+  `</span>`,
+  `<span id="stage-kind">FULL-STACK / RESTAURANT TECH`,
+  `</span>`,
+  `</div>`,
+  `<div class="stage-tabs" aria-label="Preview a project">${projects.map((p, i) => [
+    `<button data-preview="${i}" class="${i === 0 ? 'active' : ''}" aria-pressed="${i === 0}">`,
+    `<span>0${i + 1}</span> ${p.name}</button>`
+  ].join('')).join('')}</div>`,
+  `<div class="stage-bottom">`,
+  `<span>● PROJECT FILES`,
+  `</span>`,
+  `<span>BUILT TO BE EXPLORED ↗`,
+  `</span>`,
+  `</div>`,
+  `</div>`,
+  `</div>`,
+  `<div class="launch-dock">`,
+  `<span class="dock-label">OPEN A PROJECT`,
+  `</span>${projects.map((p, i) => [
+    `<button data-open-project="${i}">`,
+    `<span class="dock-number">0${i + 1}</span>`,
+    `<span>${p.name}<small>${i === 2 ? 'ANDROID APPLICATION' : 'FULL-STACK APPLICATION'}</small></span><b>↗</b></button>`
+  ].join('')).join('')}</div>`,
+  `<div class="hero-foot">`,
+  `<span>`,
+  `<span class="dot">`,
+  `</span>4 PROJECTS MOUNTED`,
+  `</span>`,
+  `<span>REACT / NODE / KOTLIN`,
+  `</span>`,
+  `<a href="#projects">SCROLL TO EXPLORE ↓`,
+  `</a>`,
+  `</div>`,
+  `</section>
 
-// A small 3D wireframe inside developer.config, rendered only while visible.
-{
- const canvas=document.querySelector('#config-core');
- if(canvas){
-  const ctx=canvas.getContext('2d'),scene=canvas.parentElement;
-  if(ctx){
-   const reduce=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(pointer: fine)');
-   let width=0,height=0,visible=false,frame=0,last=0,angle=0,px=0,py=0;
-   const vertices=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]];
-   const edges=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
-   const enabled=()=>!reduce.matches&&!document.hidden&&!document.body.classList.contains('effects-off');
-   function draw(){
-    ctx.clearRect(0,0,width,height);const cx=width/2,cy=height*.47,size=Math.min(width*.15,33);
-    const a=angle+px*.3,b=.4+py*.2;
-    function project(v,scale){const [x,y,z]=v,xx=x*Math.cos(a)+z*Math.sin(a),zz=z*Math.cos(a)-x*Math.sin(a),yy=y*Math.cos(b)-zz*Math.sin(b),depth=y*Math.sin(b)+zz*Math.cos(b);return [cx+xx*scale,cy+yy*scale,depth]}
-    const glow=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.min(width,height)*.5);glow.addColorStop(0,'#93ff6812');glow.addColorStop(1,'#93ff6800');ctx.fillStyle=glow;ctx.fillRect(0,0,width,height);
-    ctx.strokeStyle='#93ff6820';ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(cx,cy+size*1.7,size*2.3,size*.4,0,0,Math.PI*2);ctx.stroke();
-    for(const scale of [size,size*.48]){const points=vertices.map(v=>project(v,scale));
-     for(const [i,j] of edges){const alpha=.3+(points[i][2]+points[j][2]+3)/12;ctx.strokeStyle=`rgba(155,255,108,${alpha})`;ctx.beginPath();ctx.moveTo(points[i][0],points[i][1]);ctx.lineTo(points[j][0],points[j][1]);ctx.stroke()}
-     for(const [x,y] of points){ctx.fillStyle='#caffaa';ctx.fillRect(x-1,y-1,2,2)}
+`,
+  `<section id="projects" class="section">`,
+  `<div class="section-head">`,
+  `<h2>`,
+  `<span>01`,
+  `</span>Selected work`,
+  `<span style="color:#54745a;margin-left:10px;font-size:11px">/ projects`,
+  `</span>`,
+  `</h2>`,
+  `<div class="filterbar" aria-label="Filter projects">`,
+  `<button class="selected" data-filter="all" aria-pressed="true">All [04]`,
+  `</button>`,
+  `<button data-filter="web" aria-pressed="false">Web [03]`,
+  `</button>`,
+  `<button data-filter="mobile" aria-pressed="false">Mobile [01]`,
+  `</button>`,
+  `</div>`,
+  `</div>`,
+  `<div id="project-list">${card(projects[0], 0)}<div class="project-grid">${projects.slice(1).map((p, i) => card(p, i + 1)).join('')}</div>`,
+  `</div>`,
+  `</section>
+
+`,
+  `<section id="about" class="section">`,
+  `<div class="section-head">`,
+  `<h2>`,
+  `<span>02`,
+  `</span>About me`,
+  `</h2>`,
+  `<span class="micro">cat about.md`,
+  `</span>`,
+  `</div>`,
+  `<div class="two-col">`,
+  `<div class="body-copy">`,
+  `<p>I'm `,
+  `<strong>Aljun Agunas`,
+  `</strong>, a Computer Systems Technology student at Saskatchewan Polytechnic in Regina. I expect to finish my diploma in June 2027.`,
+  `</p>`,
+  `<p>I enjoy figuring out why something is not working, whether that means troubleshooting a computer or tracking down a problem in an app. Outside class, I build and upgrade computers, help friends and family with their devices, and work on small websites, programs, and games.`,
+  `</p>`,
+  `<p>My goal is to move into a technical role where I can keep developing my troubleshooting and programming skills. I’m interested in both the support side of technology and building software people can use.`,
+  `</p>`,
+  `<p>I also bring experience from healthcare support and food-service work. Those jobs taught me to follow procedures, manage my time, work with others, and stay helpful when things get busy.`,
+  `</p>`,
+  `</div>`,
+  `<div class="codebox">`,
+  `<div class="config-text">`,
+  `<span class="muted">// developer.config`,
+  `</span>`,
+  `<br>{`,
+  `<br>&nbsp; `,
+  `<span class="key">name`,
+  `</span>: "Aljun Agunas",`,
+  `<br>&nbsp; `,
+  `<span class="key">handle`,
+  `</span>: "devSatoruu",`,
+  `<br>&nbsp; `,
+  `<span class="key">focus`,
+  `</span>: ["Web", "AI", "Mobile"],`,
+  `<br>&nbsp; `,
+  `<span class="key">studying`,
+  `</span>: "Computer Systems Technology"`,
+  `<br>}`,
+  `</div>`,
+  `<div class="config-visual" aria-hidden="true">`,
+  `<canvas id="config-core">`,
+  `</canvas>`,
+  `<span class="config-caption">WEB / AI / MOBILE`,
+  `</span>`,
+  `</div>`,
+  `</div>`,
+  `</div>`,
+  `</section>
+
+`,
+  `<section id="skills" class="section">`,
+  `<div class="section-head">`,
+  `<h2>`,
+  `<span>03`,
+  `</span>Skills & evidence`,
+  `</h2>`,
+  `<span class="micro">ls ./skills --group`,
+  `</span>`,
+  `</div>`,
+  `<div class="skillgrid">`,
+  `<div class="skill">`,
+  `<h3>⌘ &nbsp; Interface`,
+  `</h3>`,
+  `<p>JavaScript · React`,
+  `<br>HTML · CSS`,
+  `<br>Responsive design · Vite`,
+  `<br>React state · Browser storage`,
+  `</p>`,
+  `</div>`,
+  `<div class="skill">`,
+  `<h3>⇄ &nbsp; Systems & APIs`,
+  `</h3>`,
+  `<p>Node.js · Express`,
+  `<br>SQLite · REST APIs`,
+  `<br>Gemini API integration`,
+  `<br>Session authentication`,
+  `</p>`,
+  `</div>`,
+  `<div class="skill">`,
+  `<h3>◇ &nbsp; Mobile & workflow`,
+  `</h3>`,
+  `<p>Kotlin · Android`,
+  `<br>Game state · Touch controls`,
+  `<br>Git · GitHub`,
+  `<br>Render · Debugging`,
+  `</p>`,
+  `</div>`,
+  `</div>`,
+  `<div class="skills-evidence">`,
+  `<h3>Where I’ve used these skills`,
+  `</h3>`,
+  `<div class="evidence-grid">`,
+  `<article>`,
+  `<h4>Problem-solving and debugging`,
+  `</h4>`,
+  `<p>In TripCraft, I worked through schema and model-access errors when connecting Gemini. I explain what went wrong and how I handled it in the case study.`,
+  `</p>`,
+  `<a href="/projects/tripcraft-ai/">See the TripCraft example ↗`,
+  `</a>`,
+  `</article>`,
+  `<article>`,
+  `<h4>Planning and clear communication`,
+  `</h4>`,
+  `<p>For BOWLSTATION, I planned separate customer and kitchen views. Guest labels show who each order belongs to, and status updates show what happens next.`,
+  `</p>`,
+  `<a href="/projects/bowlstation/">See the ordering workflow ↗`,
+  `</a>`,
+  `</article>`,
+  `</div>`,
+  `<article class="work-evidence">`,
+  `<h4>Teamwork, customer service, and time management`,
+  `</h4>`,
+  `<p class="body-copy">At McDonald’s, I worked with the team to complete customer orders during busy shifts. In food service at Saskatchewan Health Authority, I coordinated tasks around meal periods. In my environmental-services role, I organize daily tasks and adjust when priorities change. My resume lists the roles and dates behind these examples.`,
+  `</p>`,
+  `<a href="/resume.pdf" class="case-link">Read my work experience ↗`,
+  `</a>`,
+  `</article>`,
+  `<article class="work-evidence">`,
+  `<h4>Leadership and coordination — ongoing`,
+  `</h4>`,
+  `<p class="body-copy">I lead our TCD AI Co-Pilot school project, oversee the work, and help with architecture, development, and documentation. The case study shows the current scope and explains what is still in progress.`,
+  `</p>`,
+  `<a class="case-link" href="/projects/tcd-ai-copilot/">See my project-lead role ↗`,
+  `</a>`,
+  `</article>`,
+  `<h3 class="reflection-heading">Technical training`,
+  `</h3>`,
+  `<p class="body-copy">My CST labs include hardware troubleshooting, client-device setup, software installation, and network configuration and testing. We use CompTIA material in our networking labs.`,
+  `</p>`,
+  `</div>`,
+  `</section>
+
+`,
+  `<section id="resume" class="section">`,
+  `<div class="section-head">`,
+  `<h2>`,
+  `<span>04`,
+  `</span>Resume`,
+  `</h2>`,
+  `<span class="micro">cat resume.txt`,
+  `</span>`,
+  `</div>`,
+  `<p class="body-copy">Aljun Agunas / Computer Systems Technology student`,
+  `<br>My education and work experience.`,
+  `</p>`,
+  `<h3 class="reflection-heading">Education`,
+  `</h3>`,
+  `<div class="resume-row">`,
+  `<div class="micro">EXPECTED JUNE 2027`,
+  `</div>`,
+  `<div>`,
+  `<h3>Computer Systems Technology Diploma`,
+  `</h3>`,
+  `<p>Saskatchewan Polytechnic · Regina, SK`,
+  `</p>`,
+  `<p>Hands-on labs in hardware troubleshooting, Enterprise Systems Support, device setup, software installation, and networking.`,
+  `</p>`,
+  `</div>`,
+  `</div>`,
+  `<div class="resume-row">`,
+  `<div class="micro">JUNE 2017`,
+  `</div>`,
+  `<div>`,
+  `<h3>High School Diploma`,
+  `</h3>`,
+  `<p>Archbishop M.C. O’Neill Catholic High School · Regina, SK`,
+  `</p>`,
+  `<p>Computer Science coursework included programming exercises, small projects, and debugging.`,
+  `</p>`,
+  `</div>`,
+  `</div>`,
+  `<h3 class="reflection-heading">Work experience`,
+  `</h3>`,
+  `<div class="resume-row">`,
+  `<div class="micro">JAN 2022–PRESENT`,
+  `</div>`,
+  `<div>`,
+  `<h3>Environmental Service Worker · Saskatchewan Health Authority`,
+  `</h3>`,
+  `<p>I follow hospital cleaning and safety procedures, use equipment and supplies properly, and organize daily tasks as priorities change.`,
+  `</p>`,
+  `</div>`,
+  `</div>`,
+  `<div class="resume-row">`,
+  `<div class="micro">OCT 2020–APR 2022`,
+  `</div>`,
+  `<div>`,
+  `<h3>Food Service Worker · Saskatchewan Health Authority`,
+  `</h3>`,
+  `<p>I prepared and delivered meals, followed sanitation procedures, and coordinated with the team during busy meal periods.`,
+  `</p>`,
+  `</div>`,
+  `</div>`,
+  `<div class="resume-row">`,
+  `<div class="micro">APR 2016–JUL 2021`,
+  `</div>`,
+  `<div>`,
+  `<h3>Service Crew · McDonald’s`,
+  `</h3>`,
+  `<p>I took customer orders, operated registers and food-service equipment, and worked with others to complete orders accurately.`,
+  `</p>`,
+  `</div>`,
+  `</div>`,
+  `<div class="resume-actions">`,
+  `<a class="btn primary" href="/resume.pdf" download>Download resume (PDF) `,
+  `<span>↓`,
+  `</span>`,
+  `</a>`,
+  `<a class="btn" id="open-resume" href="/resume.pdf" target="_blank" rel="noopener">Open resume PDF `,
+  `<span>↗`,
+  `</span>`,
+  `</a>`,
+  `</div>`,
+  `</section>
+
+`,
+  `<section id="contact" class="section contact">`,
+  `<div class="eyebrow">05 / OPEN A CONNECTION`,
+  `</div>`,
+  `<h2>Want to ask`,
+  `<br>about my work?`,
+  `<span style="color:var(--g)">_`,
+  `</span>`,
+  `</h2>`,
+  `<p>If you have a question about my projects or want to talk about an opportunity, you can email me. My source code is on GitHub if you would like a closer look.`,
+  `</p>`,
+  `<div class="contact-links">`,
+  `<a class="btn primary" href="mailto:aljun.agunas@yahoo.ca">Email me ↗`,
+  `</a>${external('https://github.com/devSatoruu', 'Find me on GitHub', true)}<button class="btn" id="copy-profile">Copy GitHub URL `,
+  `<span>⧉`,
+  `</span>`,
+  `</button>`,
+  `</div>`,
+  `<p id="copy-status" role="status" style="min-height:20px;font-size:10px">`,
+  `</p>`,
+  `<form id="contact-form" class="contact-form">`,
+  `<h3>Write a message`,
+  `</h3>`,
+  `<label for="contact-name">Your name`,
+  `</label>`,
+  `<input id="contact-name" name="name" required maxlength="100" autocomplete="name">`,
+  `<label for="contact-email">Your email`,
+  `</label>`,
+  `<input id="contact-email" name="email" type="email" required maxlength="254" autocomplete="email">`,
+  `<label for="contact-message">Message`,
+  `</label>`,
+  `<textarea id="contact-message" name="message" required maxlength="5000" rows="5">`,
+  `</textarea>`,
+  `<button class="btn" type="submit">Open email draft ↗`,
+  `</button>`,
+  `<p class="form-help">This opens your email app. Review the draft and send it from there, or email aljun.agunas@yahoo.ca directly.`,
+  `</p>`,
+  `<p id="contact-status" role="status">`,
+  `</p>`,
+  `</form>`,
+  `</section>`
+].join('');
+// Build a case study page from the matching project data.
+function caseContent(p) {
+  return [
+    `<article>`,
+    `<div class="case-hero">`,
+    `<a class="back" href="/#projects">← cd ~/projects`,
+    `</a>`,
+    `<div class="eyebrow">CASE STUDY / ${p.type}${p.status ? ' / ' + p.status : ''}</div><h1>${p.name}</h1><p class="hero-copy">${p.summary}</p>${tags(p)}<p class="body-copy project-role"><strong>Project focus:</strong> ${p.role}</p>`,
+    `<div class="hero-actions">${p.github ? external(p.github, 'View source on GitHub', true) : ''}${p.live ? external(p.live, 'Open live demo') : ''}</div>`,
+    `</div>`,
+    `<div class="case-image">`,
+    `<button style="padding:0;width:100%" data-image="${p.image}" data-caption="${p.caption}" aria-label="Expand project visual"><img src="/assets/${p.image}" alt="${p.caption}">`,
+    `</button>`,
+    `<div class="image-caption">${p.caption} · Click to expand`,
+    `</div>`,
+    `</div>`,
+    `<section class="section">`,
+    `<div class="section-head">`,
+    `<h2>`,
+    `<span>01`,
+    `</span>How I approached the project`,
+    `</h2>`,
+    `<span class="micro">SITUATION / TASK / ACTION / RESULT`,
+    `</span>`,
+    `</div>`,
+    `<div class="star-grid">${p.star.map((s, i) => [
+      `<div class="star">`,
+      `<div class="star-head">`,
+      `<span class="star-num">0${i + 1}</span><h2>${s[0]}</h2></div><p>${s[1]}</p></div>`
+    ].join('')).join('')}</div>`,
+    `</section>`,
+    `<section class="section">`,
+    `<div class="section-head">`,
+    `<h2>`,
+    `<span>02`,
+    `</span>What I learned`,
+    `</h2>`,
+    `</div>`,
+    `<p class="body-copy">${p.lesson}</p><h3 class="reflection-heading">What I would do next</h3><p class="body-copy">${p.future}</p><h3 class="reflection-heading">What the artifacts show</h3><p class="body-copy">${p.evidence}</p><p class="micro">SOURCE: ${p.slug === 'tcd-ai-copilot' ? 'OCTOBER 2026 PROTOTYPE REQUIREMENTS' : p.slug === 'super-maria-sisters' ? 'PROJECT REPOSITORY AND ANDROID ACTIVITY IMPLEMENTATION' : 'PROJECT README'}</p></section>${p.slug === 'tcd-ai-copilot' ? [
+      `<section class="section">`,
+      `<div class="section-head">`,
+      `<h2>Prototype scope & current status`,
+      `</h2>`,
+      `</div>`,
+      `<div class="star-grid">`,
+      `<article class="star">`,
+      `<h3>Planned for V1`,
+      `</h3>`,
+      `<p>Natural-language questions, approved TCD knowledge, basic next-step routing, risk-aware responses, and human handoff. A repeatable question library will evaluate accuracy, usefulness, safety, and routing.`,
+      `</p>`,
+      `</article>`,
+      `<article class="star">`,
+      `<h3>Still to confirm`,
+      `</h3>`,
+      `<p>Client-approved routing, privacy and chat-history rules, and exact handoff wording. Backend API integration depends on the school-provided token. These are requirements and dependencies, not completed features.`,
+      `</p>`,
+      `</article>`,
+      `<article class="star">`,
+      `<h3>Outside the first release`,
+      `</h3>`,
+      `<p>Private client-portal access, automated appointment changes, and deep personalization are outside the first working version. The assistant is not intended to provide independent legal, medical, or emergency advice.`,
+      `</p>`,
+      `</article>`,
+      `<article class="star">`,
+      `<h3>How progress will be measured`,
+      `</h3>`,
+      `<p>The planned score sheet covers accuracy, helpfulness, appropriate routing, clear next steps, and human handoff. Test results will be added when the team has run and documented the benchmark.`,
+      `</p>`,
+      `</article>`,
+      `</div>`,
+      `</section>`
+    ].join('') : ''}${p.gallery ? [
+      `<section class="section">`,
+      `<div class="section-head">`,
+      `<h2>`,
+      `<span>03`,
+      `</span>Inside the project`,
+      `</h2>`,
+      `</div>`,
+      `<div class="gallery">${p.gallery.map(([img, label]) => `<button data-image="${img}" data-caption="${label}" aria-label="Expand ${label}"><img loading="lazy" src="/assets/${img}" alt="${label}"><p>${label} ↗</p></button>`).join('')}</div></section>`
+    ].join('') : ''}<section class="section">`,
+    `<div class="section-head">`,
+    `<h2>Keep exploring`,
+    `</h2>`,
+    `</div>`,
+    `<div class="hero-actions">${projects.filter(x => x !== p).map(x => `<a class="btn" href="/projects/${x.slug}/">${x.name} ↗</a>`).join('')}<a class="btn primary" href="/#contact">Contact Aljun ↗`,
+    `</a>`,
+    `</div>`,
+    `</section>`,
+    `</article>`
+  ].join('')
+}
+// Set the browser tab title for the current page.
+document.title = current ? `${current.name} — Aljun Agunas` : 'Aljun Agunas — Developer OS';
+// Render the shared site layout and terminal.
+document.querySelector('#app').innerHTML = [
+  `<header class="topbar">`,
+  `<a class="brand" href="/" aria-label="Aljun OS home">&gt;_ `,
+  `<span class="logo-decode" data-decode="ALJUN">ALJUN`,
+  `</span>.OS `,
+  `<small style="font-size:8px;color:#6d8d70;margin-left:8px">v1.0`,
+  `</small>`,
+  `</a>`,
+  `<div class="topmeta">`,
+  `<span class="kernel">PERSONAL DEVELOPMENT ENVIRONMENT`,
+  `</span>`,
+  `<span class="online">`,
+  `<span class="dot">`,
+  `</span>SYSTEM ONLINE`,
+  `<span class="header-wave" aria-hidden="true">`,
+  `<i style="--i:0;--h:5px">`,
+  `</i>`,
+  `<i style="--i:1;--h:10px">`,
+  `</i>`,
+  `<i style="--i:2;--h:17px">`,
+  `</i>`,
+  `<i style="--i:3;--h:9px">`,
+  `</i>`,
+  `<i style="--i:4;--h:21px">`,
+  `</i>`,
+  `<i style="--i:5;--h:13px">`,
+  `</i>`,
+  `<i style="--i:6;--h:6px">`,
+  `</i>`,
+  `<i style="--i:7;--h:16px">`,
+  `</i>`,
+  `<i style="--i:8;--h:10px">`,
+  `</i>`,
+  `</span>`,
+  `</span>`,
+  `<time class="clock">`,
+  `</time>`,
+  `<button class="mobile-menu" aria-expanded="false" aria-controls="sidebar">☰ Menu`,
+  `</button>`,
+  `</div>`,
+  `</header>`,
+  `<aside class="sidebar" id="sidebar">`,
+  `<p class="side-label">EXPLORER`,
+  `</p>`,
+  `<nav class="nav" aria-label="Main navigation">${nav.map(([n, id, label]) => [
+    `<a href="/${home ? '#' : '#'}${id}" data-nav="${id}" class="${(current && id === 'projects') || (!current && id === 'overview') ? 'active' : ''}">`,
+    `<span>${n}</span>${label}${id === 'projects' ? '<small style="float:right;color:#5d7e61">04</small>' : ''}</a>`
+  ].join('')).join('')}</nav>`,
+  `<div style="margin:25px 13px;color:#45614a;font-size:9px">────────────────`,
+  `<br>`,
+  `<br>`,
+  `<span style="color:#79977c">WORKSPACE`,
+  `</span>`,
+  `<br>↳ portfolio / main`,
+  `<br>↳ 4 projects mounted`,
+  `</div>`,
+  `<div class="workspace-signal" aria-hidden="true">`,
+  `<div class="signal-heading">`,
+  `<span>WORKSPACE SIGNAL`,
+  `</span>`,
+  `<span class="signal-mark">◈`,
+  `</span>`,
+  `</div>`,
+  `<div class="signal-bars">`,
+  `<i style="--i:0;--h:22%">`,
+  `</i>`,
+  `<i style="--i:1;--h:32%">`,
+  `</i>`,
+  `<i style="--i:2;--h:48%">`,
+  `</i>`,
+  `<i style="--i:3;--h:38%">`,
+  `</i>`,
+  `<i style="--i:4;--h:62%">`,
+  `</i>`,
+  `<i style="--i:5;--h:80%">`,
+  `</i>`,
+  `<i style="--i:6;--h:55%">`,
+  `</i>`,
+  `<i style="--i:7;--h:36%">`,
+  `</i>`,
+  `<i style="--i:8;--h:48%">`,
+  `</i>`,
+  `<i style="--i:9;--h:75%">`,
+  `</i>`,
+  `<i style="--i:10;--h:95%">`,
+  `</i>`,
+  `<i style="--i:11;--h:68%">`,
+  `</i>`,
+  `<i style="--i:12;--h:40%">`,
+  `</i>`,
+  `<i style="--i:13;--h:60%">`,
+  `</i>`,
+  `<i style="--i:14;--h:83%">`,
+  `</i>`,
+  `<i style="--i:15;--h:52%">`,
+  `</i>`,
+  `<i style="--i:16;--h:30%">`,
+  `</i>`,
+  `<i style="--i:17;--h:47%">`,
+  `</i>`,
+  `<i style="--i:18;--h:65%">`,
+  `</i>`,
+  `<i style="--i:19;--h:42%">`,
+  `</i>`,
+  `<i style="--i:20;--h:28%">`,
+  `</i>`,
+  `<i style="--i:21;--h:38%">`,
+  `</i>`,
+  `<i style="--i:22;--h:23%">`,
+  `</i>`,
+  `<i style="--i:23;--h:16%">`,
+  `</i>`,
+  `</div>`,
+  `<div class="signal-baseline">`,
+  `<span>01 / ALJUN.OS`,
+  `</span>`,
+  `<span>▰ ▱ ▱`,
+  `</span>`,
+  `</div>`,
+  `</div>`,
+  `<div class="side-bottom">`,
+  `<div class="side-logo">a.`,
+  `</div>`,
+  `<strong>Aljun Agunas`,
+  `</strong>`,
+  `<p>CST student & developer`,
+  `</p>`,
+  `<a href="https://github.com/devSatoruu" target="_blank" rel="noopener noreferrer">↗ github / devSatoruu`,
+  `</a>`,
+  `</div>`,
+  `</aside>`,
+  `<main id="main">`,
+  `<div class="pathbar">`,
+  `<span>aljun@portfolio:`,
+  `<b>~/${current ? 'projects/' + current.slug : 'overview'}</b>`,
+  `</span>`,
+  `<span class="rightpath">UTF-8 &nbsp; / &nbsp; READ ONLY`,
+  `</span>`,
+  `</div>${current ? caseContent(current) : homeContent}<footer class="page-footer">`,
+  `<span>© ${new Date().getFullYear()} Aljun Agunas`,
+  `</span>`,
+  `<span>Last updated: October 28, 2026`,
+  `</span>`,
+  `<a href="mailto:aljun.agunas@yahoo.ca">aljun.agunas@yahoo.ca`,
+  `</a>`,
+  `<a href="/#overview">BACK TO TOP ↑`,
+  `</a>`,
+  `</footer>`,
+  `</main>`,
+  `<footer class="statusbar">`,
+  `<div class="status-left">`,
+  `<button class="command-launch" aria-expanded="false" aria-controls="terminal">&gt;_ Open terminal`,
+  `</button>`,
+  `<span class="branch">⑂ main*`,
+  `</span>`,
+  `<span>✓ All systems operational`,
+  `</span>`,
+  `</div>`,
+  `<div>`,
+  `<button id="effects" aria-pressed="true">CRT: ON`,
+  `</button> &nbsp; `,
+  `<b>⌘ / Ctrl + K`,
+  `</b>`,
+  `</div>`,
+  `</footer>`,
+  `<section id="terminal" class="terminal" aria-label="Interactive command terminal">`,
+  `<div class="windowbar">`,
+  `<span>aljun@portfolio — bash`,
+  `</span>`,
+  `<button id="close-terminal" aria-label="Close terminal">×`,
+  `</button>`,
+  `</div>`,
+  `<div class="term-output" role="log" aria-live="polite">ALJUN.OS [v1.0]\nType help to explore available commands.`,
+  `</div>`,
+  `<form class="term-form">`,
+  `<label for="command">visitor:~$`,
+  `</label>`,
+  `<input id="command" autocomplete="off" spellcheck="false" aria-label="Terminal command" placeholder="help">`,
+  `</form>`,
+  `</section>`
+].join('');
+// Visual preferences and navigation controls.
+// Remember whether the CRT effects are enabled.
+const effects = document.querySelector('#effects');
+let effectsOn = localStorage.getItem('crt') !== 'off';
+function setEffects() {
+  document.body.classList.toggle('effects-off', !effectsOn);
+  effects.textContent = 'Effects: ' + (effectsOn ? 'ON' : 'OFF');
+  effects.setAttribute('aria-pressed', effectsOn)
+}
+setEffects();
+effects.onclick = () => {
+  effectsOn = !effectsOn;
+  localStorage.setItem('crt', effectsOn ? 'on' : 'off');
+  setEffects()
+}
+  ;
+// Mobile menu toggle and navigation cleanup.
+const menu = document.querySelector('.mobile-menu');
+menu.onclick = () => {
+  const open = document.querySelector('.sidebar').classList.toggle('shown');
+  menu.setAttribute('aria-expanded', open)
+}
+  ;
+document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => {
+  document.querySelector('.sidebar').classList.remove('shown');
+  menu.setAttribute('aria-expanded', 'false')
+}
+));
+// Image viewer: open screenshots and close the dialog.
+const dialog = document.querySelector('#viewer');
+document.querySelectorAll('[data-image]').forEach(b => b.onclick = () => {
+  dialog.querySelector('img').src = '/assets/' + b.dataset.image;
+  dialog.querySelector('img').alt = b.dataset.caption;
+  dialog.querySelector('p').textContent = b.dataset.caption;
+  dialog.showModal()
+}
+);
+dialog.querySelector('.close').onclick = () => dialog.close();
+dialog.addEventListener('click', e => {
+  if (e.target === dialog) dialog.close()
+}
+);
+// Homepage filters, active section tracking, and GitHub link copying.
+if (home) {
+  document.querySelectorAll('[data-filter]').forEach(b => b.onclick = () => {
+    document.querySelectorAll('[data-filter]').forEach(x => {
+      x.classList.toggle('selected', x === b);
+      x.setAttribute('aria-pressed', x === b)
     }
-    const orbit=Math.min(width*.34,106);
-    ['WEB','AI','MOBILE'].forEach((label,i)=>{const phase=angle*.55+i*Math.PI*2/3,x=cx+Math.cos(phase)*orbit,y=cy+Math.sin(phase)*48;
-     ctx.strokeStyle='#93ff681c';ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(x,y);ctx.stroke();ctx.fillStyle='#93ff68';ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fill();ctx.font='8px monospace';ctx.textAlign='center';ctx.fillStyle='#9cb88f';ctx.fillText(label,x,y-9)
-    });
-   }
-   function stop(){cancelAnimationFrame(frame);frame=0;last=0}
-   function tick(t){frame=0;if(!visible||!enabled())return;if(!last||t-last>=33){angle+=last?Math.min(t-last,70)*.00025:0;last=t;draw()}frame=requestAnimationFrame(tick)}
-   function sync(){stop();if(visible&&enabled())frame=requestAnimationFrame(tick);else draw()}
-   function resize(){width=scene.clientWidth;height=scene.clientHeight;const d=Math.min(devicePixelRatio||1,2);canvas.width=width*d;canvas.height=height*d;ctx.setTransform(d,0,0,d,0,0);draw()}
-   scene.addEventListener('pointermove',e=>{if(!enabled()||!fine.matches)return;const r=scene.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5});scene.addEventListener('pointerleave',()=>{px=py=0});
-   new ResizeObserver(resize).observe(scene);new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;sync()}).observe(scene);
-   reduce.addEventListener('change',sync);effects.addEventListener('click',sync);document.addEventListener('visibilitychange',sync);resize();
+    );
+    document.querySelectorAll('.project').forEach(p => p.hidden = b.dataset.filter !== 'all' && p.dataset.category !== b.dataset.filter)
   }
- }
+  );
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === e.target.id));
+        document.querySelector('.pathbar b').textContent = '~/' + e.target.id
+      }
+    }
+    )
+  }
+    , {
+      rootMargin: '-15% 0px -65% 0px'
+    }
+  );
+  document.querySelectorAll('main>section').forEach(s => observer.observe(s));
+  document.querySelector('#copy-profile').onclick = async () => {
+    const s = document.querySelector('#copy-status');
+    try {
+      await navigator.clipboard.writeText('https://github.com/devSatoruu');
+      s.textContent = '✓ GitHub URL copied to clipboard.'
+    }
+    catch {
+      s.textContent = 'GitHub URL: https://github.com/devSatoruu'
+    }
+  }
+}
+// Terminal window controls and Ctrl/Cmd + K shortcut.
+const terminal = document.querySelector('#terminal'), input = document.querySelector('#command'), output = document.querySelector('.term-output'), launcher = document.querySelector('.command-launch');
+function toggleTerminal(open) {
+  terminal.classList.toggle('open', open);
+  launcher.setAttribute('aria-expanded', open);
+  if (open) input.focus();
+  else launcher.focus()
+}
+launcher.onclick = () => toggleTerminal(!terminal.classList.contains('open'));
+document.querySelector('#close-terminal').onclick = () => toggleTerminal(false);
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    toggleTerminal(!terminal.classList.contains('open'))
+  }
+  if (e.key === 'Escape') {
+    if (terminal.classList.contains('open')) toggleTerminal(false);
+    document.querySelector('.sidebar').classList.remove('shown');
+    menu.setAttribute('aria-expanded', 'false')
+  }
+}
+);
+// Terminal commands and up/down command history.
+const history = [];
+let hi = 0;
+input.addEventListener('keydown', e => {
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    hi = Math.max(0, hi - 1);
+    input.value = history[hi] || ''
+  }
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    hi = Math.min(history.length, hi + 1);
+    input.value = history[hi] || ''
+  }
+}
+);
+document.querySelector('.term-form').onsubmit = e => {
+  e.preventDefault();
+  const raw = input.value.trim();
+  input.value = '';
+  if (!raw) return;
+  history.push(raw);
+  hi = history.length;
+  const cmd = raw.toLowerCase().replace(/\/$/, '');
+  output.textContent += '\nvisitor:~$ ' + raw;
+  let result = '';
+  if (cmd === 'clear') {
+    output.textContent = '';
+    return
+  }
+  if (cmd === 'help') result = 'Available commands:\n  ls              List portfolio sections\n  whoami          About Aljun\n  cd projects     Go to selected work\n  cd about        Read about me\n  cd skills       Open toolbox\n  cat resume.txt  Open resume\n  contact         Open contact\n  open bowlstation | tripcraft-ai | super-maria-sisters\n  pwd · date · clear\nUse ↑ / ↓ for command history. Escape closes terminal.';
+  else if (cmd === 'ls') result = 'overview/  projects/  about/  skills/  resume.txt  contact/';
+  else if (cmd === 'whoami') result = 'Aljun Agunas (@devSatoruu)\nDeveloper exploring full-stack web, AI integration, and Android.';
+  else if (cmd === 'pwd') result = '/home/aljun/portfolio';
+  else if (cmd === 'date') result = new Date().toString();
+  else if (cmd.startsWith('open ')) {
+    const p = projects.find(p => p.slug === cmd.slice(5));
+    if (p) {
+      location.href = '/projects/' + p.slug + '/';
+      return
+    }
+    result = 'Project not found. Type ls or help.'
+  }
+  else {
+    const section = cmd === 'cat resume.txt' ? 'resume' : cmd === 'contact' ? 'contact' : cmd.startsWith('cd ') ? cmd.slice(3).replace('~/', '') : '';
+    if (nav.some(n => n[1] === section)) {
+      location.href = '/#' + section;
+      toggleTerminal(false);
+      return
+    }
+    result = 'bash: ' + raw + ': command not found. Type help.'
+  }
+  output.textContent += '\n' + result + '\n';
+  output.scrollTop = output.scrollHeight
+}
+  ;
+// Update the clock in the top bar.
+function clock() {
+  document.querySelector('.clock').textContent = new Date().toLocaleTimeString('en-GB', {
+    hour12: false
+  }
+  )
+}
+clock();
+setInterval(clock, 1000);
+// Background visuals and project preview animations.
+if (home) {
+  document.querySelector('#hero-terminal').onclick = () => toggleTerminal(true);
+  document.querySelectorAll('[data-preview]').forEach(button => button.onclick = () => {
+    const p = projects[Number(button.dataset.preview)];
+    document.querySelector('#stage-image').src = '/assets/' + p.image;
+    document.querySelector('#stage-image').alt = p.caption;
+    document.querySelector('#stage-link').href = '/projects/' + p.slug + '/';
+    document.querySelector('#stage-title').textContent = p.name;
+    document.querySelector('#stage-kind').textContent = p.type;
+    document.querySelector('.stage-top>span:nth-child(2)').textContent = 'RENDER_0' + (Number(button.dataset.preview) + 1);
+    document.querySelectorAll('[data-preview]').forEach(b => {
+      b.classList.toggle('active', b === button);
+      b.setAttribute('aria-pressed', b === button)
+    }
+    )
+  }
+  );
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (!motion.matches) {
+    const canvas = document.querySelector('#matrix'), ctx = canvas.getContext('2d');
+    let drops = [], width = 0, height = 0, last = 0;
+    function resize() {
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      canvas.width = width;
+      canvas.height = height;
+      drops = Array.from({
+        length: Math.ceil(width / 22)
+      }
+        , () => Math.random() * height / 22)
+    }
+    resize();
+    new ResizeObserver(resize).observe(canvas);
+    function rain(time) {
+      requestAnimationFrame(rain);
+      if (time - last < 85 || document.hidden || document.body.classList.contains('effects-off') || motion.matches) return;
+      last = time;
+      ctx.fillStyle = 'rgba(0,5,0,.12)';
+      ctx.fillRect(0, 0, width, height);
+      ctx.font = '12px monospace';
+      drops.forEach((y, i) => {
+        ctx.fillStyle = Math.random() > .98 ? '#d7ffb7' : '#4a8032';
+        ctx.fillText('01アイウエオカキクケコ<>/{}'[Math.floor(Math.random() * 22)], i * 22, y * 22);
+        if (y * 22 > height && Math.random() > .98) drops[i] = 0;
+        else drops[i] += .45
+      }
+      )
+    }
+    requestAnimationFrame(rain);
+    if (!sessionStorage.getItem('aljun-booted')) {
+      sessionStorage.setItem('aljun-booted', '1');
+      const boot = document.createElement('div');
+      boot.className = 'boot-screen';
+      boot.innerHTML = '<div class="boot-inner"><div class="boot-logo">ALJUN.OS</div><div class="boot-line"><span>[ OK ]</span> Initializing developer environment</div><div class="boot-line"><span>[ OK ]</span> Mounting projects / 04 found</div><div class="boot-line"><span>[ OK ]</span> Opening a window into my work</div><div class="boot-track"><i></i></div><div class="boot-bottom"><span>WELCOME TO MY WORKSPACE</span><button>Skip intro ↗</button></div></div>';
+      document.body.append(boot);
+      const dismiss = () => {
+        boot.classList.add('leaving');
+        setTimeout(() => boot.remove(), 400)
+      }
+        ;
+      boot.querySelector('button').onclick = dismiss;
+      setTimeout(dismiss, 1100)
+    }
+  }
+}
+if (home) {
+  const win = document.querySelector('.project-window');
+  let opener = null;
+  win.setAttribute('role', 'dialog');
+  win.setAttribute('aria-modal', 'true');
+  win.setAttribute('aria-label', 'Project preview');
+  const closeWindow = () => {
+    win.hidden = true;
+    opener?.focus()
+  }
+    ;
+  document.querySelectorAll('[data-open-project]').forEach(b => b.onclick = () => {
+    opener = b;
+    win.hidden = false;
+    document.querySelector(`[data-preview="${b.dataset.openProject}"]`).click();
+    document.querySelector('#close-project-window').focus()
+  }
+  );
+  document.querySelector('#close-project-window').onclick = closeWindow;
+  win.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeWindow()
+    }
+    if (e.key === 'Tab') {
+      const focusable = [...win.querySelectorAll('a,button')];
+      const first = focusable[0], last = focusable.at(-1);
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus()
+      }
+      else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus()
+      }
+    }
+  }
+  );
+  const canvas = document.querySelector('#system-core'), ctx = canvas.getContext('2d'), scene = document.querySelector('.core-scene');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  let w = 0, h = 0, px = 0, py = 0, visible = true, last = 0;
+  const points = Array.from({
+    length: 650
+  }
+    , (_, i) => {
+      const y = 1 - 2 * i / 649, r = Math.sqrt(1 - y * y), angle = i * Math.PI * (3 - Math.sqrt(5));
+      return [Math.cos(angle) * r, y, Math.sin(angle) * r]
+    }
+  );
+  function sizeCore() {
+    w = scene.clientWidth;
+    h = scene.clientHeight;
+    const d = Math.min(devicePixelRatio, 2);
+    canvas.width = w * d;
+    canvas.height = h * d;
+    ctx.setTransform(d, 0, 0, d, 0, 0);
+    drawCore(0)
+  }
+  function drawCore(t) {
+    ctx.clearRect(0, 0, w, h);
+    const radius = Math.min(w * .34, h * .36), cx = w * .53, cy = h * .49, angle = t * .00016 + px * .4, tilt = .22 + py * .15;
+    const ca = Math.cos(angle), sa = Math.sin(angle), ct = Math.cos(tilt), st = Math.sin(tilt);
+    let projected = points.map(([x, y, z]) => {
+      const xx = x * ca + z * sa, zz = z * ca - x * sa, yy = y * ct - zz * st, depth = y * st + zz * ct;
+      return [cx + xx * radius, cy + yy * radius, depth]
+    }
+    );
+    projected.sort((a, b) => a[2] - b[2]);
+    for (const [x, y, z] of projected) {
+      const a = (z + 1) / 2;
+      ctx.fillStyle = `rgba(${140 + Math.round(a * 90)},255,${80 + Math.round(a * 90)},${.16 + a * .75})`;
+      ctx.beginPath();
+      ctx.arc(x, y, .55 + a * 1.1, 0, Math.PI * 2);
+      ctx.fill()
+    }
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(-.35);
+    for (let i = 0;
+      i < 3;
+      i++) {
+      ctx.strokeStyle = i === 1 ? 'rgba(170,255,95,.4)' : 'rgba(140,220,70,.13)';
+      ctx.lineWidth = i === 1 ? .8 : .5;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, radius * (1.3 + i * .12), radius * (.36 + i * .09), i * .12, 0, Math.PI * 2);
+      ctx.stroke();
+      const phase = t * .0005 * (i % 2 ? -1 : 1) + i * 2.1;
+      const orbitX = Math.cos(phase) * radius * (1.3 + i * .12), orbitY = Math.sin(phase) * radius * (.36 + i * .09);
+      ctx.fillStyle = '#ceffa4';
+      ctx.shadowColor = '#aaff65';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(orbitX, orbitY, 2.3, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0
+    }
+    ctx.restore();
+    ctx.fillStyle = '#aaff87';
+    ctx.font = '8px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('A G / CORE', cx, cy + 3);
+    ctx.strokeStyle = '#aaff8733';
+    ctx.strokeRect(cx - 39, cy - 13, 78, 25)
+  }
+  scene.addEventListener('pointermove', e => {
+    const r = scene.getBoundingClientRect();
+    px = (e.clientX - r.left) / r.width - .5;
+    py = (e.clientY - r.top) / r.height - .5
+  }
+  );
+  scene.addEventListener('pointerleave', () => {
+    px = py = 0
+  }
+  );
+  new ResizeObserver(sizeCore).observe(scene);
+  new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(scene);
+  sizeCore();
+  function frame(t) {
+    requestAnimationFrame(frame);
+    if (t - last < 32 || !visible || document.hidden || reduce.matches || document.body.classList.contains('effects-off')) return;
+    last = t;
+    drawCore(t)
+  }
+  requestAnimationFrame(frame);
+  reduce.addEventListener('change', () => drawCore(0));
+}
+// Subtle motion effects, skipped when reduced motion is preferred.
+{
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)'), finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+  const enabled = () => !reduced.matches && !document.body.classList.contains('effects-off');
+  const progress = document.createElement('div');
+  progress.className = 'reading-progress';
+  progress.setAttribute('aria-hidden', 'true');
+  document.body.append(progress);
+  let scheduled = false;
+  function updateProgress() {
+    const distance = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = `scaleX(${distance > 0 ? Math.min(1, scrollY / distance) : 0})`;
+    scheduled = false
+  }
+  addEventListener('scroll', () => {
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(updateProgress)
+    }
+  }
+    , {
+      passive: true
+    }
+  );
+  addEventListener('resize', updateProgress);
+  updateProgress();
+  const revealObserver = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('revealed');
+      revealObserver.unobserve(e.target)
+    }
+  }
+  ), {
+    threshold: .06, rootMargin: '0px 0px -20px 0px'
+  }
+  );
+  document.querySelectorAll('.project,.two-col,.skillgrid,.resume-row,.star,.gallery button').forEach(el => {
+    if (el.getBoundingClientRect().top > innerHeight && enabled()) {
+      el.classList.add('motion-reveal');
+      revealObserver.observe(el)
+    }
+  }
+  );
+  document.querySelectorAll('.skill').forEach(el => {
+    const cube = document.createElement('span');
+    cube.className = 'mini-cube';
+    cube.setAttribute('aria-hidden', 'true');
+    cube.innerHTML = '<i></i>'.repeat(6);
+    el.append(cube)
+  }
+  );
+  document.querySelectorAll('.project').forEach(card => {
+    card.classList.add('depth-card');
+    let pending = false, lastX = 0, lastY = 0;
+    card.addEventListener('pointermove', e => {
+      if (!enabled() || !finePointer.matches) return;
+      lastX = e.clientX;
+      lastY = e.clientY;
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(() => {
+        pending = false;
+        const r = card.getBoundingClientRect(), x = Math.max(0, Math.min(1, (lastX - r.left) / r.width)), y = Math.max(0, Math.min(1, (lastY - r.top) / r.height));
+        card.style.setProperty('--rx', `${(y - .5) * -5}deg`);
+        card.style.setProperty('--ry', `${(x - .5) * 5}deg`);
+        card.style.setProperty('--mx', `${x * 100}%`);
+        card.style.setProperty('--my', `${y * 100}%`);
+        card.classList.add('tilting')
+      }
+      )
+    }
+    );
+    card.addEventListener('pointerleave', () => card.classList.remove('tilting'))
+  }
+  );
+  document.querySelectorAll('[data-preview]').forEach(b => b.addEventListener('click', () => {
+    if (!enabled()) return;
+    const screen = document.querySelector('.stage-screen');
+    screen.classList.remove('switching');
+    requestAnimationFrame(() => screen.classList.add('switching'))
+  }
+  ));
+  document.addEventListener('visibilitychange', () => document.body.classList.toggle('motion-paused', document.hidden));
+  reduced.addEventListener('change', () => {
+    if (reduced.matches) {
+      document.querySelectorAll('.motion-reveal').forEach(el => el.classList.add('revealed'));
+      document.querySelectorAll('.tilting').forEach(el => el.classList.remove('tilting'))
+    }
+  }
+  );
+}
+if (home) {
+  document.querySelector('#contact-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    if (!form.reportValidity()) return;
+    const name = form.elements.name.value.trim(), email = form.elements.email.value.trim(), message = form.elements.message.value.trim();
+    const subject = encodeURIComponent('Portfolio inquiry from ' + name), body = encodeURIComponent('Name: ' + name + '\nReply email: ' + email + '\n\n' + message);
+    location.href = 'mailto:aljun.agunas@yahoo.ca?subject=' + subject + '&body=' + body;
+    document.querySelector('#contact-status').textContent = 'Email draft requested. If your email app does not open, use the address above. This form has not sent a message.'
+  }
+  )
+}
+// Matrix-style mouse trail for pointer devices.
+{
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const pointer = matchMedia('(hover: hover) and (pointer: fine)');
+  const canvas = document.createElement('canvas');
+  canvas.className = 'matrix-pointer-trail';
+  canvas.setAttribute('aria-hidden', 'true');
+  document.body.append(canvas);
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    const glyphs = '01アイウエオカキクケコ<>/{}';
+    let particles = [], frameId = 0, previous = null, lastSpawn = 0;
+    const enabled = () => pointer.matches && !reduced.matches && !document.hidden && !document.body.classList.contains('effects-off');
+    function clear() {
+      cancelAnimationFrame(frameId);
+      frameId = 0;
+      particles = [];
+      previous = null;
+      ctx.clearRect(0, 0, innerWidth, innerHeight)
+    }
+    function resize() {
+      clear();
+      const scale = Math.min(devicePixelRatio || 1, 2);
+      canvas.width = innerWidth * scale;
+      canvas.height = innerHeight * scale;
+      ctx.setTransform(scale, 0, 0, scale, 0, 0)
+    }
+    function draw(now) {
+      frameId = 0;
+      if (!enabled()) {
+        clear();
+        return
+      }
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      particles = particles.filter(p => now - p.born < p.life);
+      ctx.font = '12px monospace';
+      ctx.textAlign = 'center';
+      for (const p of particles) {
+        const age = (now - p.born) / p.life;
+        ctx.globalAlpha = (1 - age) * .65;
+        ctx.fillStyle = age < .15 ? '#d8ffc7' : '#93ff68';
+        ctx.fillText(p.glyph, p.x + p.drift * age, p.y + age * 27)
+      }
+      ctx.globalAlpha = 1;
+      if (particles.length) frameId = requestAnimationFrame(draw);
+    }
+    document.addEventListener('pointermove', e => {
+      if (e.pointerType !== 'mouse' || !enabled()) {
+        clear();
+        return
+      }
+      const now = performance.now();
+      if (previous && Math.hypot(e.clientX - previous.x, e.clientY - previous.y) < 9) return;
+      if (now - lastSpawn < 24) return;
+      const distance = previous ? Math.hypot(e.clientX - previous.x, e.clientY - previous.y) : 0;
+      const count = Math.min(3, Math.max(1, Math.floor(distance / 18)));
+      for (let i = 0;
+        i < count;
+        i++) {
+        const t = (i + 1) / count;
+        particles.push({
+          x: previous ? previous.x + (e.clientX - previous.x) * t : e.clientX, y: (previous ? previous.y + (e.clientY - previous.y) * t : e.clientY) + 15, born: now, life: 420 + Math.random() * 260, drift: (Math.random() - .5) * 16, glyph: glyphs[Math.floor(Math.random() * glyphs.length)]
+        }
+        );
+      }
+      particles = particles.slice(-60);
+      previous = {
+        x: e.clientX, y: e.clientY
+      }
+        ;
+      lastSpawn = now;
+      if (!frameId) frameId = requestAnimationFrame(draw);
+    }
+      , {
+        passive: true
+      }
+    );
+    document.documentElement.addEventListener('pointerleave', () => {
+      previous = null
+    }
+    );
+    addEventListener('blur', clear);
+    addEventListener('resize', resize, {
+      passive: true
+    }
+    );
+    document.addEventListener('visibilitychange', clear);
+    reduced.addEventListener('change', clear);
+    pointer.addEventListener('change', clear);
+    effects.addEventListener('click', clear);
+    resize();
+  }
+}
+// Brief name reveal on entry, with readable text afterward.
+{
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const targets = [...document.querySelectorAll('[data-decode]')];
+  const enabled = () => !reduced.matches && !document.hidden && !document.body.classList.contains('effects-off');
+  let timer = 0, frame = 0, last = 0, start = 0;
+  function finish() {
+    clearTimeout(timer);
+    cancelAnimationFrame(frame);
+    targets.forEach(el => {
+      el.textContent = el.dataset.decode;
+      el.style.removeProperty('width')
+    }
+    );
+  }
+  function tick(now) {
+    if (!enabled()) {
+      finish();
+      return
+    }
+    if (!start) start = now;
+    const elapsed = now - start;
+    if (elapsed >= 850) {
+      finish();
+      return
+    }
+    if (now - last > 55) {
+      last = now;
+      targets.forEach(el => {
+        const word = el.dataset.decode, resolved = Math.floor(elapsed / 850 * (word.length + 1));
+        el.textContent = [...word].map((c, i) => i < resolved ? c : '01<>/{}ABCDEFGHIJKLMNOPQRSTUVWXYZ'[Math.floor(Math.random() * 32)]).join('')
+      }
+      )
+    }
+    frame = requestAnimationFrame(tick);
+  }
+  // Start the name reveal after the boot screen.
+  if (enabled()) timer = setTimeout(() => {
+    if (!enabled()) return;
+    targets.forEach(el => el.style.width = el.getBoundingClientRect().width + 'px');
+    frame = requestAnimationFrame(tick)
+  }
+    , document.querySelector('.boot-screen') ? 1450 : 180);
+  effects.addEventListener('click', finish);
+  reduced.addEventListener('change', finish);
+  document.addEventListener('visibilitychange', finish);
+  const name = document.querySelector('.hero h1');
+  let sweepTimer = 0;
+  name?.addEventListener('pointerenter', e => {
+    if (e.pointerType !== 'mouse' || !enabled() || name.classList.contains('name-hover-sweep')) return;
+    name.classList.add('name-hover-sweep');
+    clearTimeout(sweepTimer);
+    sweepTimer = setTimeout(() => name.classList.remove('name-hover-sweep'), 1300)
+  }
+  );
+}
+// Rotating wireframe shown in the developer.config panel.
+{
+  const canvas = document.querySelector('#config-core');
+  if (canvas) {
+    const ctx = canvas.getContext('2d'), scene = canvas.parentElement;
+    if (ctx) {
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)'), fine = matchMedia('(pointer: fine)');
+      let width = 0, height = 0, visible = false, frame = 0, last = 0, angle = 0, px = 0, py = 0;
+      const vertices = [[-1, -1, -1], [1, -1, -1], [1, 1, -1], [-1, 1, -1], [-1, -1, 1], [1, -1, 1], [1, 1, 1], [-1, 1, 1]];
+      const edges = [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]];
+      const enabled = () => !reduce.matches && !document.hidden && !document.body.classList.contains('effects-off');
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        const cx = width / 2, cy = height * .47, size = Math.min(width * .15, 33);
+        const a = angle + px * .3, b = .4 + py * .2;
+        function project(v, scale) {
+          const [x, y, z] = v, xx = x * Math.cos(a) + z * Math.sin(a), zz = z * Math.cos(a) - x * Math.sin(a), yy = y * Math.cos(b) - zz * Math.sin(b), depth = y * Math.sin(b) + zz * Math.cos(b);
+          return [cx + xx * scale, cy + yy * scale, depth]
+        }
+        const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.min(width, height) * .5);
+        glow.addColorStop(0, '#93ff6812');
+        glow.addColorStop(1, '#93ff6800');
+        ctx.fillStyle = glow;
+        ctx.fillRect(0, 0, width, height);
+        ctx.strokeStyle = '#93ff6820';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.ellipse(cx, cy + size * 1.7, size * 2.3, size * .4, 0, 0, Math.PI * 2);
+        ctx.stroke();
+        for (const scale of [size, size * .48]) {
+          const points = vertices.map(v => project(v, scale));
+          for (const [i, j] of edges) {
+            const alpha = .3 + (points[i][2] + points[j][2] + 3) / 12;
+            ctx.strokeStyle = `rgba(155,255,108,${alpha})`;
+            ctx.beginPath();
+            ctx.moveTo(points[i][0], points[i][1]);
+            ctx.lineTo(points[j][0], points[j][1]);
+            ctx.stroke()
+          }
+          for (const [x, y] of points) {
+            ctx.fillStyle = '#caffaa';
+            ctx.fillRect(x - 1, y - 1, 2, 2)
+          }
+        }
+        const orbit = Math.min(width * .34, 106);
+        ['WEB', 'AI', 'MOBILE'].forEach((label, i) => {
+          const phase = angle * .55 + i * Math.PI * 2 / 3, x = cx + Math.cos(phase) * orbit, y = cy + Math.sin(phase) * 48;
+          ctx.strokeStyle = '#93ff681c';
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+          ctx.lineTo(x, y);
+          ctx.stroke();
+          ctx.fillStyle = '#93ff68';
+          ctx.beginPath();
+          ctx.arc(x, y, 2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.font = '8px monospace';
+          ctx.textAlign = 'center';
+          ctx.fillStyle = '#9cb88f';
+          ctx.fillText(label, x, y - 9)
+        }
+        );
+      }
+      function stop() {
+        cancelAnimationFrame(frame);
+        frame = 0;
+        last = 0
+      }
+      function tick(t) {
+        frame = 0;
+        if (!visible || !enabled()) return;
+        if (!last || t - last >= 33) {
+          angle += last ? Math.min(t - last, 70) * .00025 : 0;
+          last = t;
+          draw()
+        }
+        frame = requestAnimationFrame(tick)
+      }
+      function sync() {
+        stop();
+        if (visible && enabled()) frame = requestAnimationFrame(tick);
+        else draw()
+      }
+      function resize() {
+        width = scene.clientWidth;
+        height = scene.clientHeight;
+        const d = Math.min(devicePixelRatio || 1, 2);
+        canvas.width = width * d;
+        canvas.height = height * d;
+        ctx.setTransform(d, 0, 0, d, 0, 0);
+        draw()
+      }
+      scene.addEventListener('pointermove', e => {
+        if (!enabled() || !fine.matches) return;
+        const r = scene.getBoundingClientRect();
+        px = (e.clientX - r.left) / r.width - .5;
+        py = (e.clientY - r.top) / r.height - .5
+      }
+      );
+      scene.addEventListener('pointerleave', () => {
+        px = py = 0
+      }
+      );
+      new ResizeObserver(resize).observe(scene);
+      new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting;
+        sync()
+      }
+      ).observe(scene);
+      reduce.addEventListener('change', sync);
+      effects.addEventListener('click', sync);
+      document.addEventListener('visibilitychange', sync);
+      resize();
+    }
+  }
 }
