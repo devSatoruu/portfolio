@@ -1,58 +1,96 @@
-# Aljun Agunas — Developer Portfolio
+# Aljun Agunas - Developer Portfolio
 
-Responsive developer portfolio with four STAR case studies, original project screenshots, an ongoing project architecture artifact, education and work history, a sanitized PDF resume, email contact, and an optional animated developer-OS interface.
+Hi, I'm Aljun! I'm currently studying Computer Systems Technology at Saskatchewan Polytechnic, and this is my personal developer portfolio.
 
-## Quick start
+I created this website to showcase the projects I've worked on, the skills I've learned, and my experience with programming and IT. It also includes STAR case studies where I explain the challenges I faced, what I worked on, and what I learned from each project.
 
-No package installation is required. Use Node.js 22 or newer for checks and the deployment helper.
+**Live Website:** https://devsatoruu.github.io/portfolio/
+
+## About the Website
+
+I wanted my portfolio to look different from a typical website, so I went with a green-and-black developer OS theme inspired by computer terminals.
+
+The website includes:
+- A responsive layout for desktop and mobile
+- An interactive terminal with commands
+- Matrix-style animations and visual effects
+- Project showcases with screenshots
+- GitHub repositories and live demo links
+- STAR case studies for my projects
+- My technical skills, education, and work experience
+- A downloadable resume and contact section
+
+## My Projects
+
+### BOWLSTATION
+
+A full-stack restaurant ordering prototype where customers can scan a QR code to browse the menu and place orders. It also has a kitchen dashboard for staff to manage incoming orders.
+
+**Technologies:** React, Node.js, Express, SQLite
+
+[Live Demo](https://bowlstation.onrender.com/?table=1) | [GitHub](https://github.com/devSatoruu/bowlstation)
+
+### TripCraft AI
+
+A travel planning application that uses AI to generate itineraries based on a user's destination, budget, and preferences. Users can also edit activities and save their trips.
+
+**Technologies:** React, Vite, Node.js, Express, Google Gemini API
+
+[Live Demo](https://tripcraft-ai-o4ad.onrender.com/) | [GitHub](https://github.com/devSatoruu/tripcraft-ai)
+
+### Super Maria Sisters
+
+A Kotlin Android runner game developed as a group project. My main responsibilities were working on gameplay controls, including jumping and sliding, and character animations.
+
+**Technologies:** Kotlin, Android
+
+[GitHub](https://github.com/devSatoruu/super-maria-sisters)
+
+### TCD AI Co-Pilot — In Progress
+
+An ongoing school team project for The Clean Divorce. I'm the project leader, helping with planning, team coordination, system architecture, and documentation.
+
+The project is still in development.
+
+## Technologies Used
+
+I built this portfolio using:
+
+- HTML
+- CSS
+- JavaScript
+- Git and GitHub
+- GitHub Pages for hosting
+
+I also added interactive elements, animations, and responsive styling to make the website more interesting to explore.
+
+## Running the Website Locally
+
+The website is a static project, so there's no need to install React or other frameworks.
+
+After downloading or cloning the repository, open the project folder in VS Code and run:
 
 ```bash
-node --check dist/app.js
-node scripts/check-site.mjs
-node scripts/check-pages.mjs
+npx --yes serve dist -l 5500
 ```
 
-The source website is in `dist/`. Serve that directory with a static HTTP server. Opening the HTML directly as a local file is not supported.
+Then open:
 
-## Deploy on GitHub Pages
+http://localhost:5500
 
-1. Create a public GitHub repository, for example `portfolio`.
-2. Put the files from this package at the repository root, including `.github/workflows/deploy-pages.yml`. Do not place them inside a second nested directory.
-3. Push to the `main` branch.
-4. In repository Settings → Pages, select **GitHub Actions** as the build and deployment source.
-5. Run **Check and deploy portfolio** from the Actions tab if the initial push happened before Pages was enabled.
-6. Wait for the workflow to succeed. Open the exact URL shown by the deployment.
-7. Test that URL in a signed-out/private browser before submitting it to Brightspace.
+To edit the website:
+- `dist/app.js` — website content, project information, and interactions
+- `dist/style.css` — design, layout, and animations
+- `dist/assets/` — project screenshots and images
 
-The workflow checks the site, creates `site-build/`, and publishes that directory. It automatically handles repository subpaths, so both an account site and a `/portfolio/` project site work. No personal access token or API key belongs in this project.
+## Contact
 
-Workflow reference: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+Feel free to check out my projects or connect with me.
 
-## Push from a local computer
+**GitHub:** https://github.com/devSatoruu
 
-After extracting the package and opening a terminal in its directory:
+**Email:** aljun.agunas@yahoo.ca
 
-```bash
-git init -b main
-git add .
-git commit -m "Add developer portfolio"
-git remote add origin YOUR_GITHUB_REPOSITORY_URL
-git push -u origin main
-```
+---
 
-Replace `YOUR_GITHUB_REPOSITORY_URL` with the repository URL you created. Authenticate through GitHub's normal sign-in or credential manager; do not paste a token into source files.
-
-## Edit content
-
-- `dist/app.js`: project data, page content, and interactions.
-- `dist/style.css`: responsive layout, theme, and effects.
-- `dist/assets/`: screenshots and the planned TCD architecture diagram.
-- `dist/resume.pdf`: supplied resume with phone number and references page removed.
-- `dist/projects/*/index.html`: direct-entry case-study pages.
-- `scripts/build-pages.mjs`: deployment-path conversion; source `dist` stays usable at a root domain.
-
-Update the visible last-updated date when making future content changes. The contact form opens the visitor's email app and does not send messages on the server.
-
-## Final submission review
-
-See `SUBMISSION_CHECKLIST.md`. Source checks passed, but an actual public deployment, signed-out access, and browser/mobile interaction checks must be completed before claiming submission readiness. Confirm all personal statements, particularly individual contributions to Super Maria Sisters.
+Made by Aljun Agunas.
